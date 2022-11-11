@@ -126,7 +126,7 @@ export default function Section1() {
 
     useEffect(() => {
         if (done) {
-            return 
+            return
         } else {
             (async () => {
                 await writeOnTitle('J.P. BRUNO', 'banner-title')
@@ -146,11 +146,15 @@ export default function Section1() {
 
                 <div className='titleButtons'>
                     <button className='github'>
-                        GitHub
+                        <a href='https://github.com/Jp-bruno' target='_blank' rel='noreferrer'>
+                            GitHub
+                        </a>
                     </button>
 
                     <button className='linkedin'>
-                        LinkedIn
+                        <a href='https://www.linkedin.com/in/jo%C3%A3o-pedro-bruno-machado-230227a6/' target='_blank' rel='noreferrer'>
+                            LinkedIn
+                        </a>
                     </button>
                 </div>
             </div>
