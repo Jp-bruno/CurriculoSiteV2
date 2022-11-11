@@ -4,7 +4,8 @@ import TagIcon from './TagIcon';
 
 const StyledAppBar = styled.header`
     padding: 22px 100px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     background: black;
     z-index: 10;
     width: 100%;
