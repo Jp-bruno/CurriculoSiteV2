@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { h1Styles, sectionPaddings } from '../../styles/minixs';
 
 const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
-    padding-top: 95px;
-    padding-inline: var(--base-padding-inline);
+
+    ${sectionPaddings}
 
     h1 {
-        border-bottom: solid 1px #ffffffaa;
-        padding: 10px;
+        ${h1Styles}
     }
 
     .content {
