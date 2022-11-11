@@ -63,7 +63,7 @@ export default function Section5() {
     ];
 
     return (
-        <StyledSection>
+        <StyledSection id='projects'>
             <h1>Meus projetos</h1>
 
             <div className='meus-projetos-content'>
