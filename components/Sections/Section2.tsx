@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { h1Styles, sectionPaddings } from '../../styles/minixs';
+import { h1Styles, sectionPaddings, sectionStyleMixin } from '../../styles/minixs';
 
 const StyledSection = styled.section`
     display: flex;
@@ -23,8 +23,7 @@ const StyledSection = styled.section`
         column-gap: 60px;
         display: flex;
         flex-direction: column;
-        border: dashed 1px #ffffff90;
-        background: #222;
+        ${sectionStyleMixin}
         
         .scroller-div {
             position: sticky;
