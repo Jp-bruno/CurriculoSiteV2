@@ -12,7 +12,8 @@
 }
 
 :root {
-  --base-padding-inline: 50px; 
+  --section-outer-padding-inline: 50px; 
+  --section-inner-padding: 50px;
 }
 
 p::first-letter {

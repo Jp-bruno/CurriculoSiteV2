@@ -3,12 +3,12 @@ export const h1Styles = `
     padding: 10px;
 `;
 
-export const sectionPaddings = `
+export const sectionOuterPaddings = `
     padding-top: 95px;
-    padding-inline: var(--base-padding-inline);
+    padding-inline: var(--section-outer-padding-inline);
 `;
 
-export const sectionStyleMixin = `
+export const borderAndBackgroundMixin = `
     border: dashed 1px #ffffff90;
     background: #222;
 `;

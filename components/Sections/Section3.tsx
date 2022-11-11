@@ -1,17 +1,21 @@
 import styled from "styled-components";
-import { h1Styles, sectionPaddings, sectionStyleMixin, basicTypography } from '../../styles/minixs';
+import { h1Styles, sectionOuterPaddings, borderAndBackgroundMixin, basicTypography } from '../../styles/minixs';
 
 const StyledSection = styled.section`
-    ${sectionPaddings}
+    ${sectionOuterPaddings}
 
     h1 {
         ${h1Styles}
     }
 
     .frontend-content {
-        ${sectionStyleMixin}
-        padding: 50px;
+        ${borderAndBackgroundMixin}
         ${basicTypography}
+        padding: var(--section-inner-padding);
+        
+        blockquote {
+            color: rgba(255,255,255,0.8);
+        }
     }
 `
 
