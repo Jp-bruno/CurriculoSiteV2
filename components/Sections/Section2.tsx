@@ -87,7 +87,10 @@ const StyledSection = styled.section`
         }
     }
 
-    ${SectionMobileCss}
+    @media (max-width: 900px) {
+        ${SectionMobileCss}
+    }
+
 `;
 
 
