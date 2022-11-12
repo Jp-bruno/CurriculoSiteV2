@@ -2,6 +2,20 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import TagIcon from './TagIcon';
 
+import HamburguerButton from './HamburguerButton';
+
+const AppBarMobileCss = `
+    padding: 20px ;
+
+    nav {
+        justify-content: space-between;
+    }
+
+    ul {
+        display: none;
+    }
+`;
+
 const StyledAppBar = styled.header`
     padding: 22px 100px;
     position: sticky;
@@ -60,6 +74,10 @@ const StyledAppBar = styled.header`
             }
         }
     }
+
+    @media (max-width: 900px) {
+        ${AppBarMobileCss}
+    }
 `;
 
 export default function Appbar() {
@@ -88,6 +106,7 @@ export default function Appbar() {
                         <Link href={'/#contact'}>Contato</Link>
                     </li>
                 </ul>
+                <HamburguerButton />
             </nav>
         </StyledAppBar>
     )

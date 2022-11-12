@@ -1,6 +1,45 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+const SectionMobileCss = `
+    background-image: linear-gradient(0deg, hsla(201, 58%, 27%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
+    padding: 0;
+    display: grid;
+    place-items: center;
+    height: calc(100vh - 50px);
+
+    #banner-title, #second-banner-title {
+        width: 100vw;
+        text-align: center;
+        font-size: 32px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #second-banner-title {
+        min-height: 120px;
+    }
+    
+    
+    .titleAndButtons {
+        
+        & .titleButtons {
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 40%;
+        }
+
+
+    }
+
+
+`;
+
 const StyledContentHolder = styled.div`
     height: calc(100vh - 90px);
     background-image: url('web-development.png'), linear-gradient(0deg, hsla(201, 58%, 27%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
@@ -95,6 +134,10 @@ const StyledContentHolder = styled.div`
                 }
             }
         }
+    }
+
+    @media(max-width: 900px) {
+        ${SectionMobileCss}
     }
 `;
 
