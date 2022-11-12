@@ -2,6 +2,24 @@ import styled from "styled-components";
 import Image from "next/image";
 import { h1Styles, sectionOuterPaddings, borderAndBackgroundMixin } from '../../styles/minixs';
 
+const SectionMobileCss = `
+    padding: 0;
+    padding-top: 70px;
+
+    h1 {
+        border: 0;
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .me_card {
+        display: none;
+    }
+`;
+
 const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
@@ -68,6 +86,8 @@ const StyledSection = styled.section`
             }
         }
     }
+
+    ${SectionMobileCss}
 `;
 
 

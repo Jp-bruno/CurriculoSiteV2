@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const SectionMobileCss = `
+    // background-image: url('BG-effects.png'), linear-gradient(0deg, hsla(201, 58%, 27%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
     background-image: linear-gradient(0deg, hsla(201, 58%, 27%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
     padding: 0;
     display: grid;

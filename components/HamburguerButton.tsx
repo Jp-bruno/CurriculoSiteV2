@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const StyledButton = styled.button`
     display: none;
@@ -14,6 +13,7 @@ const StyledButton = styled.button`
         flex-direction: column;
         justify-content: space-between;
         margin-right: 10px;
+        transition: transform 0.3s ease;
     
         span {
             height: 4px;
@@ -25,6 +25,8 @@ const StyledButton = styled.button`
         }
 
         &.open {
+            transform: translateX(-35%);
+
             span:nth-of-type(1) {
                 transform: rotateZ(45deg) translateX(40%);
             }
@@ -41,11 +43,9 @@ const StyledButton = styled.button`
 `;
 
 
-export default function HamburguerButton() {
-    const [open, setOpen] = useState(false);
-
+export default function HamburguerButton({ isOpen, toggleMobileMenu }: { isOpen: boolean, toggleMobileMenu: () => void }) {
     return (
-        <StyledButton className={open ? 'open' : 'closed'} onClick={() => setOpen(!open)}>
+        <StyledButton className={isOpen ? 'open' : 'closed'} onClick={toggleMobileMenu}>
             <span></span>
             <span></span>
             <span></span>
