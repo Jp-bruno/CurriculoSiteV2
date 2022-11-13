@@ -17,19 +17,21 @@ const StyledSection = styled.section`
     
         .tecnologias {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: space-evenly;
             padding-bottom: 40px;
+            column-gap: 20px;
     
             .tecnologia {
+                position: relative;
+                width: 200px;
+                height: 200px;
                 display: grid;
                 place-items: center;
-    
-                    &::after {
-                    content: attr(data-tech);
-                    position: absolute;
-                    padding: 20px 40px;
-                    transform: translateY(190%);
+
+                figure {
+                    figcaption {
+                        margin-top: 200px;
+                    }
                 }
             }
         }
@@ -42,13 +44,24 @@ const StyledSection = styled.section`
             padding: 20px 30px;
 
             .tecnologias {
-                flex-direction: column;
+                flex-direction: row;
                 row-gap: 50px;
-
+                
                 .tecnologia {
-                    &::after {
-                        padding: 0;
-                        transform: translateY(340%);
+                    position: relative;
+                    width: 100px;
+                    height: 100px;
+                    display: grid;
+                    place-items: center;
+
+                    figure {
+                        width: 100%;
+                        margin: 0;
+
+                        figcaption {
+                            margin-top: 100px;
+                            text-align: center;
+                        }
                     }
                 }
 
@@ -71,15 +84,31 @@ export default function Section4() {
 
                 <div className='tecnologias'>
                     <span className='tecnologia' data-tech='CSS3'>
-                        <Image src='/icons8-css3-400.png' layout='fixed' width={400 / 2} height={400 / 2} alt='CSS3' />
+
+                        <figure>
+                            <Image src='/icons8-css3-400.png' layout='fill' alt='CSS3' />
+                            <figcaption>
+                                CSS3
+                            </figcaption>
+                        </figure>
                     </span>
 
                     <span className='tecnologia' data-tech='JavaScript'>
-                        <Image src='/js-big-icon.png' layout='fixed' width={300 / 2} height={300 / 2} alt='JavaScript' />
+                        <figure>
+                            <Image src='/js-big-icon.png' layout='fill' alt='JavaScript' />
+                            <figcaption>
+                                JavaScript
+                            </figcaption>
+                        </figure>
                     </span>
 
                     <span className='tecnologia' data-tech='HTML5'>
-                        <Image src='/icons8-html-5-400.png' layout='fixed' width={400 / 2} height={400 / 2} alt='HTML5' />
+                        <figure>
+                            <Image src='/icons8-html-5-400.png' layout='fill' alt='HTML5' />
+                            <figcaption>
+                                HTML5
+                            </figcaption>
+                        </figure>
                     </span>
                 </div>
             </div>

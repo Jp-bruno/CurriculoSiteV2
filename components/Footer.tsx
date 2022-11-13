@@ -3,7 +3,7 @@ import TagIcon from './TagIcon';
 import Image from 'next/image';
 
 const MobileFooterCss = `
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     flex-direction: column;
     row-gap: 20px;
 
@@ -11,9 +11,12 @@ const MobileFooterCss = `
         flex-direction: column;
         row-gap: 20px;
 
-        span {
+        .made-by {
             text-align: center;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
         }
     }
 `;
@@ -26,28 +29,16 @@ const FooterStyle = styled.footer`
     flex-direction: row-reverse;
     align-items: center;
 
-    a {
-        position: relative;
-        color: #ff006e;
-        padding-bottom: 10px;
-        
-
-        &::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background-color: white;
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-    }
-
     .footer-content-wrapper {
         align-items: center;
         column-gap: 20px;
         display: flex;
+
+        .made-by {
+            #me {
+                color: #ff006e;
+            }
+        }
     }
 
     @media(max-width: 900px) {
@@ -67,11 +58,13 @@ export default function Footer() {
             <TagIcon size={1} />
 
             <div className='footer-content-wrapper'>
-                <span>
+                <span className='made-by'>
                     Feito por
-                </span>
 
-                <a href='https://www.linkedin.com/in/jo%C3%A3o-pedro-bruno-machado-230227a6/' target='_blank' rel="noreferrer">João Pedro Bruno Machado</a>
+                    <br></br>
+
+                    <a id='me' href='https://www.linkedin.com/in/jo%C3%A3o-pedro-bruno-machado-230227a6/' target='_blank' rel="noreferrer">João Pedro Bruno Machado</a>
+                </span>
 
                 <SocialMediaLinks>
                     <ul>

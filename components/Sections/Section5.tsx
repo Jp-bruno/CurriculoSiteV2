@@ -14,6 +14,7 @@ const StyledSection = styled.section`
 const StyledCard = styled.div`
     border: dashed 1px #ffffffaa;
     display: flex;
+    margin-bottom: 20px;
     
     a {
         padding: 5px 0 5px 20px;
