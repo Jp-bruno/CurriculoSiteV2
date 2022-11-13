@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import styled from 'styled-components';
 import Image from 'next/image';
-import { basicTypography, h1Styles, sectionOuterPaddings, borderAndBackgroundMixin } from '../../styles/minixs';
+import { basicTypography, h1Styles, sectionOuterPaddings, borderAndBackgroundMixin, MobileSectionMixin } from '../../styles/minixs';
 
 const StyledSection = styled.section`
     ${sectionOuterPaddings}
@@ -34,6 +34,27 @@ const StyledSection = styled.section`
             }
         }
     }
+
+    @media(max-width: 900px) {
+        ${MobileSectionMixin}
+
+        .tecnologias-content {
+            padding: 20px 30px;
+
+            .tecnologias {
+                flex-direction: column;
+                row-gap: 50px;
+
+                .tecnologia {
+                    &::after {
+                        padding: 0;
+                        transform: translateY(340%);
+                    }
+                }
+
+            }
+        }
+    }
 `;
 
 export default function Section4() {
@@ -50,21 +71,15 @@ export default function Section4() {
 
                 <div className='tecnologias'>
                     <span className='tecnologia' data-tech='CSS3'>
-                        <a href='/#css'>
-                            <Image src='/icons8-css3-400.png' layout='fixed' width={400 / 2} height={400 / 2} alt='CSS3' />
-                        </a>
+                        <Image src='/icons8-css3-400.png' layout='fixed' width={400 / 2} height={400 / 2} alt='CSS3' />
                     </span>
 
                     <span className='tecnologia' data-tech='JavaScript'>
-                        <a href='/#javascript'>
-                            <Image src='/js-big-icon.png' layout='fixed' width={300 / 2} height={300 / 2} alt='JavaScript' />
-                        </a>
+                        <Image src='/js-big-icon.png' layout='fixed' width={300 / 2} height={300 / 2} alt='JavaScript' />
                     </span>
 
                     <span className='tecnologia' data-tech='HTML5'>
-                        <a href='/#html'>
-                            <Image src='/icons8-html-5-400.png' layout='fixed' width={400 / 2} height={400 / 2} alt='HTML5' />
-                        </a>
+                        <Image src='/icons8-html-5-400.png' layout='fixed' width={400 / 2} height={400 / 2} alt='HTML5' />
                     </span>
                 </div>
             </div>

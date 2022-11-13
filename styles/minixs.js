@@ -23,3 +23,17 @@ export const basicTypography = `
         color: rgba(255,255,255,0.8);
     }
 `;
+
+export const MobileSectionMixin = `
+    padding: 0;
+    padding-top: 70px;
+
+    h1 {
+        border: 0;
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+`;

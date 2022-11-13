@@ -3,6 +3,12 @@ import { sectionOuterPaddings } from '../../styles/minixs';
 
 const StyledSection = styled.section`
     ${sectionOuterPaddings}
+
+    @media (max-width: 900px) {
+        h1 {
+            text-align: center;
+        }
+    }
 `;
 
 const StyledCard = styled.div`

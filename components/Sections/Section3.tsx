@@ -1,5 +1,21 @@
 import styled from "styled-components";
-import { h1Styles, sectionOuterPaddings, borderAndBackgroundMixin, basicTypography } from '../../styles/minixs';
+import { h1Styles, sectionOuterPaddings, borderAndBackgroundMixin, basicTypography, MobileSectionMixin } from '../../styles/minixs';
+
+const SectionMobileCss = `
+    ${MobileSectionMixin}
+
+    blockquote {
+        padding: 0;
+        margin: 0;
+        text-align: justify;
+        font-size: 1.1rem;
+    }
+
+    .frontend-content {
+        padding: 20px 30px;
+
+    }
+`;
 
 const StyledSection = styled.section`
     ${sectionOuterPaddings}
@@ -16,6 +32,10 @@ const StyledSection = styled.section`
         blockquote {
             color: rgba(255,255,255,0.8);
         }
+    }
+
+    @media (max-width: 900px) {
+        ${SectionMobileCss}
     }
 `
 
@@ -45,7 +65,7 @@ export default function Section3() {
                 </blockquote>
 
                 <p>
-                    O front-end é o profissional que irá escrever o código que representa a estrutura não só visual, estética, como também semântica da página web, dando vida ao design
+                    O desenvolvedor front-end é o profissional que irá escrever o código que representa a estrutura não só visual, estética, como também semântica da página web, dando vida ao design
                     feito pela equipe de UX/UI tornando-o interativo e funcional.
                 </p>
             </div>
