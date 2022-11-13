@@ -126,12 +126,10 @@ export default function Section2() {
 
                     <p>
                         Nasci e cresci no Rio de Janeiro. Durante esse processo de amadurecimento tive muitos desafios e espectativas quanto
-                        ao meu futuro. Desde os meus 14 anos eu já queria muito um trabalho, queria ter a sensação de ter algo meu, conquistado com o meu esforço,
-                        mas meus pais me orientaram a focar nos estudos e me colocaram
-                        em um colégio com cursos técnicos em várias áreas de profissão. A minha área de escolha na época foi Química porque sempre fui curioso, queria saber
-                        como as coisas são feitas, por que se comportam do jeito que se comportam e etc, eu adorava questionamentos e reflexões filosóficas sobre o universo e química
-                        era exatamente o que eu procurava porque não se mantinha apenas no mundo das ideias, as aulas práticas em laboratório eram difíceis mas incríveis, observar
-                        o comportamento e as características de uma amostra e como se aplicavam na vida real me deixava extremamente empolgado.
+                        ao meu futuro, desde cedo eu já queria muito trabalhar, queria ter a sensação de ter algo meu, conquistado com o meu esforço. Quando fiz 15 anos
+                        me matriculei em um colégio com cursos técnicos em várias áreas de profissão, minha área de escolha, na época, foi Química. Saber
+                        como as coisas são feitas, por que se comportam do jeito que se comportam e etc, eu adorava os questionamentos e reflexões filosóficas sobre o universo que a química
+                        despertava.
                     </p>
 
                     <p>
