@@ -31,7 +31,7 @@ const StyledSection = styled.section`
 
     .me_card {
         padding: 20px;
-        flex-basis: 300%;
+        flex-basis: 100%;
         column-gap: 60px;
         display: flex;
         flex-direction: column;
@@ -126,7 +126,7 @@ export default function Section2() {
 
                     <p>
                         Nasci e cresci no Rio de Janeiro. Durante esse processo de amadurecimento tive muitos desafios e espectativas quanto
-                        ao meu futuro, desde cedo eu já queria muito trabalhar, queria ter a sensação de ter algo meu, conquistado com o meu esforço. Quando fiz 15 anos
+                        ao meu futuro, queria a sensação de ter algo meu, conquistado com o meu esforço. Quando fiz 15 anos
                         me matriculei em um colégio com cursos técnicos em várias áreas de profissão, minha área de escolha, na época, foi Química. Saber
                         como as coisas são feitas, por que se comportam do jeito que se comportam e etc, eu adorava os questionamentos e reflexões filosóficas sobre o universo que a química
                         despertava.
