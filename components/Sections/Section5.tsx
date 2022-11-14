@@ -45,7 +45,7 @@ export default function Section5() {
       projectUrl: "https://jp-bruno.github.io/JobList/",
       previewImg: "/joblist.png",
       gitUrl: "https://github.com/Jp-bruno/JobList"
-    }
+    },
   ];
 
   return (
