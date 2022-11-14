@@ -19,31 +19,31 @@ export default function Section5() {
     {
       title: "E-commerce Website",
       projectUrl: "https://jp-bruno.github.io/ecommerce-website/",
-      previewImg: "/projectsThumbs/ecommerce.png",
+      previewImg: "./projectsThumbs/ecommerce.png",
       gitUrl: "https://github.com/Jp-bruno/ecommerce-website"
     },
     {
       title: "Space Tourism",
       projectUrl: "https://jp-bruno.github.io/Space-Tourism/",
-      previewImg: "/projectsThumbs/space.png",
+      previewImg: "./projectsThumbs/space.png",
       gitUrl: "https://github.com/Jp-bruno/Space-Tourism"
     },
     {
       title: "Easy Bank",
       projectUrl: "https://easy-bank-fawn.vercel.app/",
-      previewImg: "/projectsThumbs/easybank.png",
+      previewImg: "./projectsThumbs/easybank.png",
       gitUrl: "https://github.com/Jp-bruno/EasyBank"
     },
     {
       title: "Task List",
       projectUrl: "https://jp-bruno.github.io/TaskList/",
-      previewImg: "/projectsThumbs/tasklist.png",
+      previewImg: "./projectsThumbs/tasklist.png",
       gitUrl: "https://github.com/Jp-bruno/TaskList"
     },
     {
       title: "Job List",
       projectUrl: "https://jp-bruno.github.io/JobList/",
-      previewImg: "/projectsThumbs/joblist.png",
+      previewImg: "./projectsThumbs/joblist.png",
       gitUrl: "https://github.com/Jp-bruno/JobList"
     },
   ];
