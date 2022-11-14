@@ -126,15 +126,15 @@ export default function Appbar() {
                     </li>
 
                     <li onClick={toggleMobileMenu}>
+                        <Link href={'/#projects'}>Meus projetos</Link>
+                    </li>
+
+                    <li onClick={toggleMobileMenu}>
                         <Link href={'/#about-me'}>Sobre mim</Link>
                     </li>
 
                     <li onClick={toggleMobileMenu}>
                         <Link href={'/#about-frontend'}>Sobre ser Front-end</Link>
-                    </li>
-
-                    <li onClick={toggleMobileMenu}>
-                        <Link href={'/#projects'}>Meus projetos</Link>
                     </li>
 
                     <li onClick={toggleMobileMenu}>

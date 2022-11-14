@@ -1,9 +1,29 @@
-import Image from "next/image"
+import Image from "next/image";
+import styled from "styled-components";
+
+const StyledList = styled.ul`
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+
+    button {
+        background: 0;
+        border: 0;
+    }
+
+    @media(max-width: 900px) {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+`
 
 export default function Tecnologias() {
     return (
-        <ul className='images'>
-            <li>
+        <StyledList>
+            {/* <li>
                 <button data-name='JavaScript'>
                     <Image src='/icons8-javascript-48.png' alt='JavaScript' width={48} height={48} layout={'intrinsic'} />
                 </button>
@@ -20,6 +40,7 @@ export default function Tecnologias() {
                     <Image src='/icons8-html-5-400.png' alt='CSS3' width={48} height={48} layout={'intrinsic'} />
                 </button>
             </li>
+            */}
 
             <li>
                 <button data-name='ReactJS'>
@@ -50,6 +71,6 @@ export default function Tecnologias() {
                     <Image src='/icons8-material-ui-48.png' alt='Material-UI' width={48} height={48} layout={'intrinsic'} />
                 </button>
             </li>
-        </ul>
+        </StyledList>
     )
 }

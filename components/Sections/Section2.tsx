@@ -106,10 +106,6 @@ export default function Section2() {
                             </li>
 
                             <li>
-                                24 anos
-                            </li>
-
-                            <li>
                                 Rio de Janeiro - RJ
                             </li>
                         </ul>
@@ -120,26 +116,11 @@ export default function Section2() {
                     <h3>Ola, me chamo João 😁</h3>
 
                     <p>
-                        Tenho 24 anos de idade e sou desenvolvedor Front-end. Foram muitas fases, muitos trabalhos diferentes e experiências de vida
-                        que me transformaram em quem sou hoje.
+                        Sou desenvolvedor Front-end nascido e criado no Rio de Janeiro.
                     </p>
 
                     <p>
-                        Nasci e cresci no Rio de Janeiro. Durante esse processo de amadurecimento tive muitos desafios e espectativas quanto
-                        ao meu futuro, queria a sensação de ter algo meu, conquistado com o meu esforço. Quando fiz 15 anos
-                        me matriculei em um colégio com cursos técnicos em várias áreas de profissão, minha área de escolha, na época, foi Química. Saber
-                        como as coisas são feitas, por que se comportam do jeito que se comportam e etc, eu adorava os questionamentos e reflexões filosóficas sobre o universo que a química
-                        despertava.
-                    </p>
-
-                    <p>
-                        Quando finalmente terminei o ensino médio fui em busca de um estágio. Depois de meses atrás do estágio e duas tentativas de
-                        cursar química na faculdade acabei deixando a ideia de lado para seguir com algo um pouco menos ousado (por que fazer um curso com
-                        Cálculo no currículo é ousadia, na minha opinião).
-                    </p>
-
-                    <p>
-                        A partir daí tive vários trabalhos em busca de algo que pudesse ser a profissão ideal para mim. Só para listar alguns:
+                        Alguns trabalhos que tive antes de ser front-end:
                     </p>
 
                     <ul>
