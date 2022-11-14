@@ -23,24 +23,18 @@ const StyledList = styled.ul`
 export default function Tecnologias() {
     return (
         <StyledList>
-            {/* <li>
-                <button data-name='JavaScript'>
-                    <Image src='/icons8-javascript-48.png' alt='JavaScript' width={48} height={48} layout={'intrinsic'} />
+            <li>
+                <button data-name='TypeScript'>
+                    <Image src='/icons8-typescript-48.png' alt='TypeScript' width={48} height={48} layout={'intrinsic'} />
                 </button>
             </li>
 
             <li>
-                <button data-name='CSS3'>
-                    <Image src='/icons8-css3-48.png' alt='CSS3' width={48} height={48} layout={'intrinsic'} />
+                <button data-name='Shopify'>
+                    <Image src='/icons8-shopify-48.png' alt='Shopify' width={48} height={48} layout={'intrinsic'} />
                 </button>
             </li>
 
-            <li>
-                <button data-name='HTML5'>
-                    <Image src='/icons8-html-5-400.png' alt='CSS3' width={48} height={48} layout={'intrinsic'} />
-                </button>
-            </li>
-            */}
 
             <li>
                 <button data-name='ReactJS'>
