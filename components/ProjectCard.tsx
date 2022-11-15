@@ -11,6 +11,7 @@ const StyledCard = styled.div`
 
   .project-image {
     flex: 1;
+    display: flex;
   }
 
   .project-details {
@@ -79,6 +80,10 @@ const StyledCard = styled.div`
   @media (max-width: 900px) {
     column-gap: 20px;
     padding: 20px 10px;
+
+    .project-details .project-title {
+      font-size: 1rem;
+    }
   }
 `;
 

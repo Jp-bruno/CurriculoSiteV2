@@ -1,16 +1,20 @@
 import styled from "styled-components";
-import { h1Styles, sectionOuterPaddings, MobileSectionMixin } from "../../styles/minixs";
+import { SectionMixin } from "../../styles/minixs";
 import ProjectCard from "../ProjectCard";
 
 const StyledSection = styled.section`
-  ${sectionOuterPaddings}
-
-  h1 {
-    ${h1Styles}
+  ${SectionMixin}
+  
+  .content {
+    border: 0;
+    background: black;
+    padding: 0;
   }
 
   @media (max-width: 900px) {
-    ${MobileSectionMixin}
+    .content {
+      padding: 20px 5px 0;
+    }
   }
 `;
 
@@ -52,7 +56,7 @@ export default function Section5() {
     <StyledSection id="projects">
       <h1>Meus projetos</h1>
 
-      <div className="meus-projetos-content">
+      <div className="content">
         {cardsData.map(({ title, projectUrl, previewImg, gitUrl }) => (
           <ProjectCard
             previewImg={previewImg}

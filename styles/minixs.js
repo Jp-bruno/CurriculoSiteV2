@@ -1,39 +1,54 @@
-export const h1Styles = `
-    border-bottom: solid 1px #ffffffaa;
-    padding: 10px;
-`;
+import { css } from "styled-components";
 
-export const sectionOuterPaddings = `
-    padding-top: 95px;
-    padding-inline: var(--section-outer-padding-inline);
-`;
-
-export const borderAndBackgroundMixin = `
+export const borderAndBackgroundMixin = css`
     border: dashed 1px #ffffff90;
     background: #222;
 `;
 
-export const basicTypography = `
-    letter-spacing: .1rem;
-    line-height: 2.7ch;
+export const SectionMixin = css`
+  padding-top: 95px;
+  padding-inline: 50px;
+  letter-spacing: 2px;
+  line-height: 2.7ch;
 
-    p {
-        text-align: justify;
-        font-size: 18px;
-        color: rgba(255,255,255,0.8);
+  & h1 {
+    border-bottom: solid 1px #ffffffaa;
+    padding: 10px;
+  }
+
+  & h3 {
+    text-align: center;
+  }
+
+  & .content {
+    border: dashed 1px #ffffff90;
+    background: #222;
+    padding: 25px 50px;
+    text-align: justify;
+  }
+
+  & p {
+    text-align: justify;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  @media (max-width: 900px) {
+    padding: 70px 0 0 0;
+
+    & h1 {
+      border: 0;
+      text-align: center;
+      font-weight: 400;
+
     }
-`;
 
-export const MobileSectionMixin = `
-    padding: 0;
-    padding-top: 70px;
-
-    h1 {
-        border: 0;
-        text-align: center;
+    & .content {
+      padding: 20px 30px;
     }
 
-    h3 {
-        text-align: center;
+    & p {
+      letter-spacing: 0;
     }
+  }
 `;

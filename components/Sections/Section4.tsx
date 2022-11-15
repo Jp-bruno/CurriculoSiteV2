@@ -1,27 +1,13 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import styled from "styled-components";
 import Image from "next/image";
-import {
-  basicTypography,
-  h1Styles,
-  sectionOuterPaddings,
-  borderAndBackgroundMixin,
-  MobileSectionMixin,
-} from "../../styles/minixs";
+import { SectionMixin } from "../../styles/minixs";
 import Tecnologias from "../Tecnologias";
 
 const StyledSection = styled.section`
-  ${sectionOuterPaddings}
+  ${SectionMixin}
 
-  h1 {
-    ${h1Styles}
-  }
-
-  .tecnologias-content {
-    ${borderAndBackgroundMixin}
-    ${basicTypography}
-        padding: var(--section-inner-padding);
-
+  .content {
     .tecnologias {
       display: flex;
       justify-content: space-evenly;
@@ -45,9 +31,7 @@ const StyledSection = styled.section`
   }
 
   @media (max-width: 900px) {
-    ${MobileSectionMixin}
-
-    .tecnologias-content {
+    .content {
       padding: 20px 30px;
 
       .tecnologias {
@@ -81,7 +65,7 @@ export default function Section4() {
     <StyledSection>
       <h1>Quais tecnologias eu uso?</h1>
 
-      <div className="tecnologias-content">
+      <div className="content">
         <p>
           As tecnologias disponíveis hoje são incontáveis, desde as mais simples
           até as mais complexas. Entretando, sabe-se que para todo desenvolvedor
@@ -112,10 +96,12 @@ export default function Section4() {
         </div>
 
         <p>
-          Estas três tecnologias juntas podem ser a base de qualquer página web, muitas tecnologias novas foram desenvolvidas
-          a partir do que estas três permitem. Para citar alguns exemplos aqui vão as minhas preferidas:
+          Estas três tecnologias juntas podem ser a base de qualquer página web,
+          muitas tecnologias novas foram desenvolvidas a partir do que estas
+          três permitem. Para citar alguns exemplos aqui vão as minhas
+          preferidas:
         </p>
-        
+
         <Tecnologias />
       </div>
     </StyledSection>

@@ -1,15 +1,10 @@
 import styled from 'styled-components';
-import { basicTypography, borderAndBackgroundMixin, h1Styles, MobileSectionMixin, sectionOuterPaddings } from '../../styles/minixs';
-
-const SectionMobileCss = `
-    ${MobileSectionMixin}
-`;
+import { borderAndBackgroundMixin, SectionMixin } from '../../styles/minixs';
 
 const StyledSection = styled.section`
-    ${sectionOuterPaddings}
-    ${basicTypography}
+    ${SectionMixin}
     
-    .contact-content {
+    .content {
         ${borderAndBackgroundMixin}
         text-align: center;
         padding: 20px 10px;
@@ -31,15 +26,6 @@ const StyledSection = styled.section`
             }
         }
     }
-
-    h1 {
-        ${h1Styles}
-    }
-
-    @media(max-width: 900px) {
-        ${SectionMobileCss}
-
-    }
 `;
 
 export default function Section6() {
@@ -47,7 +33,7 @@ export default function Section6() {
         <StyledSection id='contact'>
             <h1>Contato</h1>
 
-            <div className='contact-content'>
+            <div className='content'>
                 <span>
                     Agora que já me conhece melhor, entre em contato comigo pelo e-mail: <br></br>
                     <button title='Clique para copiar' onClick={async(ev) => await navigator.clipboard.writeText(ev.currentTarget.textContent || '')}>

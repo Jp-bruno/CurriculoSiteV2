@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const SectionMobileCss = `
+const SectionMobileCss = css`
     // background-image: url('BG-effects.png'), linear-gradient(0deg, hsla(201, 58%, 27%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
     background-image: linear-gradient(0deg, hsla(201, 58%, 27%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
     padding: 0;
@@ -24,9 +24,7 @@ const SectionMobileCss = `
         min-height: 120px;
     }
     
-    
     .titleAndButtons {
-        
         & .titleButtons {
             justify-content: space-evenly;
             align-items: center;
@@ -34,11 +32,7 @@ const SectionMobileCss = `
             width: 100%;
             height: 40%;
         }
-
-
     }
-
-
 `;
 
 const StyledContentHolder = styled.div`
@@ -97,7 +91,7 @@ const StyledContentHolder = styled.div`
 
     .images {
         display: flex;
-        aling-items: center;
+        align-items: center;
         justify-content: space-between;
         list-style-type: none;
         padding: 0;
