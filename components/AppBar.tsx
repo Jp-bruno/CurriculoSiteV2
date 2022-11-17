@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import TagIcon from './TagIcon';
 
 import HamburguerButton from './HamburguerButton';
 import { useState } from 'react';
 
-const AppBarMobileCss = `
+const AppBarMobileCss = css`
     padding: 20px ;
 
     nav {
@@ -23,7 +23,7 @@ const AppBarMobileCss = `
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
-        border: solid 3px white;
+        border: solid 1px #ffffff90;
 
         li, li:first-of-type {
             margin: 0;
@@ -31,8 +31,8 @@ const AppBarMobileCss = `
         }
 
         &.mobile-closed {
-            top: -100px;
-            opacity: 0;
+            top: -400px;
+            opacity: 1;
             pointer-events: none;
         }
 

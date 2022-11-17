@@ -35,6 +35,7 @@ export const SectionMixin = css`
 
   @media (max-width: 900px) {
     padding: 70px 0 0 0;
+    padding-inline: 5px;
 
     & h1 {
       border: 0;

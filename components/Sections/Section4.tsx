@@ -36,22 +36,23 @@ const StyledSection = styled.section`
 
       .tecnologias {
         flex-direction: row;
-        row-gap: 50px;
 
         .tecnologia {
           position: relative;
-          width: 100px;
-          height: 100px;
+          width: 75px;
+          height: 75px;
           display: grid;
           place-items: center;
+          position: relative;
 
           figure {
-            width: 100%;
             margin: 0;
 
             figcaption {
-              margin-top: 100px;
+              margin: 0;
+              position: absolute;
               text-align: center;
+              transform: translate(-50%, 150%);
             }
           }
         }
@@ -96,7 +97,7 @@ export default function Section4() {
         </div>
 
         <p>
-          Estas três tecnologias juntas podem ser a base de qualquer página web,
+          Estas três juntas podem ser a base de qualquer página web,
           muitas tecnologias novas foram desenvolvidas a partir do que estas
           três permitem. Para citar alguns exemplos aqui vão as minhas
           preferidas:

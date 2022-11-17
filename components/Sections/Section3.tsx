@@ -33,7 +33,7 @@ export default function Section3() {
           <i>feeling</i> da página.
         </p>
 
-        <p>
+        {/* <p>
           Eu gosto de comparar o processo de construção de páginas web com o de
           construção de prédios. Quando tenho que explicar o que um front-end
           faz eu geralmente digo:
@@ -53,7 +53,7 @@ export default function Section3() {
             erguendo a estrutura do que em breve será o prédio (ou no nosso
             caso, o site).
           </i>
-        </blockquote>
+        </blockquote> */}
 
         <p>
           O desenvolvedor front-end é o profissional que irá escrever o código

@@ -16,7 +16,7 @@ const StyledSection = styled.section`
 
   .me_card {
     padding: 20px;
-    flex-basis: 100%;
+    flex-basis: 20%;
     column-gap: 60px;
     display: flex;
     flex-direction: column;
@@ -49,6 +49,7 @@ const StyledSection = styled.section`
     padding: 20px 30px;
     letter-spacing: 0.1rem;
     line-height: 2.7ch;
+    flex-basis: 80%;
 
     p {
       text-align: justify;
@@ -83,6 +84,7 @@ const StyledSection = styled.section`
     .more-about-me {
       padding: 0;
       border: 0;
+      flex-basis: 100%;
     }
   }
 `;
@@ -122,43 +124,23 @@ export default function Section2() {
 
           <ul>
             <li>
-              DJ/Técnico de som - Eu era responsável por tocar música quando
-              nenhum artista estivesse se apresentando, e quando tivesse eu
-              tinha que montar o palco, microfonar os instrumentos, ligar tudo
-              na mesa de som e fazer a mixagem, além de receber os músicos e
-              prestar assistência à eles. Foi um trabalho divertido.
+              DJ/Técnico de som
             </li>
 
             <li>
-              Estoquista - Nesse trabalho eu fui jovem aprendiz de um
-              restaurante, não tinha muita coisa de interessante e muitas vezes
-              não tinha nenhum trabalho a ser feito, acabei saindo pois não me
-              interessou, não queria seguir a carreira.
+              Estoquista
             </li>
 
             <li>
-              Transcritor - Até mesmo hoje em dia pego alguns trabalhos de
-              transcrição, geralmente são áudios de tamanhos variados. Já
-              transcrevi áudios de diversos tipos: entrevistas, diálogos,
-              eventos, discursos e aulas. Também já legendei vídeos com o áudio
-              em Inglês para legendas em Português para a Khan Academy.
+              Transcritor
             </li>
 
             <li>
-              Passeador de cães - Trabalhar com cães é incrível, são animais
-              fantásticos, e eu sempre gostei muito de animais em geral, então
-              isso já era um extra. Minha experiência como passeador de cães foi
-              ótima, conheci muitas pessoas, virei treinador de passeadores e
-              depois adestrador.
+              Passeador de cães
             </li>
 
             <li>
-              Adestrador de cães - Basicamente a evolução do trabalho anterior.
-              O passeio é parte do adestramento, então acho que é natural que
-              todo passeador se torne adestrador mais cedo ou mais tarde. Como
-              adestrador eu treinei muitas pessoas (para serem passeadores) e
-              acabei criando uma rede de contatos para fornecer o serviço de
-              passeio com cães, todos treinados por mim.
+              Adestrador de cães
             </li>
           </ul>
         </div>
