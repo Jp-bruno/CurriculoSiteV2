@@ -12,6 +12,8 @@ export default function Document() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
         <meta property="og:type" content="website" />
+        <meta property="og:description" content="JP Bruno - Front-end Developer" />
+        <meta property="og:url" content="https://jp-bruno.vercel.app/" />
         <link rel="icon" href="/icons8-react-48.png" />
         <meta name="description" content="JP Bruno - Front-end Developer" />
       </Head>
