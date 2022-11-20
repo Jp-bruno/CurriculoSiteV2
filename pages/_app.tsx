@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Front-end Developer</title>
         <meta property="og:title" content="Front-end Developer" key="title" />
-        <meta property="og:image" content="/thumbnail.png" />
+        <meta property="og:image" content="https://github.com/Jp-bruno/Jp-bruno/blob/master/public/thumbnail.png?raw=true" />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/icons8-react-48.png" />
         <meta name="description" content="JP Bruno - Front-end Developer" />
       </Head>
