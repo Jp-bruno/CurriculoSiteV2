@@ -4,12 +4,11 @@ import ProjectCard from "../ProjectCard";
 
 const StyledSection = styled.section`
   ${SectionMixin}
-  
+
   .content {
     border: 0;
     background: black;
     padding: 0;
-
   }
 
   @media (max-width: 900px) {
@@ -26,7 +25,7 @@ const cardsData = [
     previewImg: "/ecommerce.png",
     gitUrl: "https://github.com/Jp-bruno/ecommerce-website",
     description: "Um site fictício de e-commerce feito em ReactJS. É um projeto do site Front-end Mentor.",
-    techs: ["HTML", "CSS", "Sass", "JavaScript", "ReactJS", "Styled-Components"]
+    techs: ["HTML", "CSS", "JavaScript", "ReactJS", "Sass", "Styled-Components"],
   },
   {
     title: "Space Tourism",
@@ -34,7 +33,7 @@ const cardsData = [
     previewImg: "/space.png",
     gitUrl: "https://github.com/Jp-bruno/Space-Tourism",
     description: "Um site fictício de viagem espacial feito em HTML e CSS puros. É um projeto do site Front-end Mentor.",
-    techs: ["HTML", "CSS"]
+    techs: ["HTML", "CSS"],
   },
   {
     title: "Easy Bank",
@@ -42,7 +41,7 @@ const cardsData = [
     previewImg: "/easybank.png",
     gitUrl: "https://github.com/Jp-bruno/EasyBank",
     description: "Uma landing page fictícia de internet banking. É um projeto do site Front-end Mentor.",
-    techs: ["HTML", "CSS", "Sass", "JavaScript", "TypeScript", "ReactJS", "NextJS", "Styled-Components"]
+    techs: ["HTML", "CSS", "JavaScript", "TypeScript", "Sass", "ReactJS", "NextJS", "Styled-Components"],
   },
   {
     title: "Task List",
@@ -50,7 +49,15 @@ const cardsData = [
     previewImg: "/tasklist.png",
     gitUrl: "https://github.com/Jp-bruno/TaskList",
     description: "Uma lista de tarefas que utiliza principalmente dos hooks useContext e useState do ReactJS, entre outros hooks.",
-    techs: ["HTML", "CSS", "Sass", "JavaScript", "ReactJS", "Styled-Components"]
+    techs: ["HTML", "CSS", "JavaScript", "ReactJS"],
+  },
+  {
+    title: "Task List V2",
+    projectUrl: "https://jp-bruno.github.io/taskListV2/",
+    previewImg: "/tasklistv2.png",
+    gitUrl: "https://github.com/Jp-bruno/taskListV2",
+    description: "Uma versão aprimorada da lista de tarefas acima.",
+    techs: ["HTML", "CSS", "JavaScript", "ReactJS", "Emotion", "Material-UI"],
   },
   {
     title: "Job List",
@@ -58,8 +65,8 @@ const cardsData = [
     previewImg: "/joblist.png",
     gitUrl: "https://github.com/Jp-bruno/JobList",
     description: "Uma lista filtrável de vagas de emprego. É um projeto do site Front-end Mentor.",
-    techs: ["HTML", "CSS", "Sass", "JavaScript", "TypeScript", "ReactJS", "Styled-Components"]
-  }
+    techs: ["HTML", "CSS", "JavaScript", "TypeScript", "ReactJS"],
+  },
 ];
 
 export default function Section5() {
@@ -69,10 +76,7 @@ export default function Section5() {
 
       <div className="content">
         {cardsData.map(({ title, projectUrl, previewImg, gitUrl, description, techs }) => (
-          <ProjectCard
-            cardData={{previewImg, title, projectUrl, gitUrl, techs, description }}
-            key={Math.random() * 1000}
-          />
+          <ProjectCard cardData={{ previewImg, title, projectUrl, gitUrl, techs, description }} key={Math.random() * 1000} />
         ))}
       </div>
     </StyledSection>

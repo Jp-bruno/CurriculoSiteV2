@@ -23,7 +23,7 @@ const StyledCard = styled.div`
       transition: color 0.2s ease;
 
       &:hover,
-      &:focus {
+      &:focus-visible {
         color: #ff006e;
       }
     }
