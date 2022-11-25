@@ -51,14 +51,14 @@ const cardsData = [
     description: "Uma lista de tarefas que utiliza principalmente dos hooks useContext e useState do ReactJS, entre outros hooks.",
     techs: ["HTML", "CSS", "JavaScript", "ReactJS"],
   },
-  {
-    title: "Task List V2",
-    projectUrl: "https://jp-bruno.github.io/taskListV2/",
-    previewImg: "/tasklistv2.png",
-    gitUrl: "https://github.com/Jp-bruno/taskListV2",
-    description: "Uma versão aprimorada da lista de tarefas acima.",
-    techs: ["HTML", "CSS", "JavaScript", "ReactJS", "Emotion", "Material-UI"],
-  },
+  // {
+  //   title: "Task List V2",
+  //   projectUrl: "https://jp-bruno.github.io/taskListV2/",
+  //   previewImg: "/tasklistv2.png",
+  //   gitUrl: "https://github.com/Jp-bruno/taskListV2",
+  //   description: "Uma versão aprimorada da lista de tarefas acima.",
+  //   techs: ["HTML", "CSS", "JavaScript", "ReactJS", "Emotion", "Material-UI"],
+  // },
   {
     title: "Job List",
     projectUrl: "https://jp-bruno.github.io/JobList/",
