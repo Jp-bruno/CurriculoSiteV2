@@ -5,6 +5,8 @@ type LanguageContextType = {
   changeLanguage: (language: "Português" | "English") => void
 };
 
+//test
+
 export const LanguageContext = createContext({} as LanguageContextType);
 
 export default function LanguageContextProvider({ children }: PropsWithChildren) {
