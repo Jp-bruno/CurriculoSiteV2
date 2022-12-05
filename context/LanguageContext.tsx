@@ -2,7 +2,7 @@ import { createContext, PropsWithChildren, useState } from "react";
 
 type LanguageContextType = {
   language: "Português" | "English";
-  changeLanguage: () => void
+  changeLanguage: (language: "Português" | "English") => void
 };
 
 export const LanguageContext = createContext({} as LanguageContextType);
@@ -10,8 +10,8 @@ export const LanguageContext = createContext({} as LanguageContextType);
 export default function LanguageContextProvider({ children }: PropsWithChildren) {
   const [language, setLanguage] = useState<"Português" | "English">("Português");
 
-  function changeLanguage() {
-    setLanguage(prevState => prevState === "Português" ? "English" : "Português")
+  function changeLanguage(language: "Português" | "English") {
+    setLanguage(language)
   }
 
   return (

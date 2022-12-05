@@ -176,7 +176,7 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
   }
 
   return (
-    <StyledCard>
+    <StyledCard key={Math.random() * 2000}>
       <div className="image-title-flex-parent">
         <a
           className="project-image"
