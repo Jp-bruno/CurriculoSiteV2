@@ -218,7 +218,7 @@ export default function Appbar() {
 
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
-  const { language, changeLanguage } = useContext(LanguageContext.LanguageContext);
+  const { language, changeLanguage } = useContext(LanguageContext);
 
   function toggleMobileMenu() {
     setMobileMenuOpen((prevState) => !prevState);
