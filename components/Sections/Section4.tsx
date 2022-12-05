@@ -1,64 +1,92 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import styled from "styled-components";
 import Image from "next/image";
-import { SectionMixin } from "../../styles/minixs";
-import Tecnologias from "../Tecnologias";
+import { borderAndBackgroundMixin, SectionMixin } from "../../styles/minixs";
 import { useContext } from "react";
 import { LanguageContext } from "../../context/languageContext";
 
 const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
   ${SectionMixin}
 
   .content {
-    .tecnologias {
+    display: flex;
+    position: relative;
+    padding: 0;
+    border: 0;
+  }
+
+  .me_card {
+    padding: 20px;
+    flex-basis: 20%;
+    column-gap: 60px;
+    display: flex;
+    flex-direction: column;
+    ${borderAndBackgroundMixin}
+
+    .scroller-div {
+      position: sticky;
+      top: 17%;
+    }
+
+    .profile_pic {
       display: flex;
-      justify-content: space-evenly;
-      padding-bottom: 40px;
-      column-gap: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      justify-content: center;
+    }
 
-      .tecnologia {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        display: grid;
-        place-items: center;
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
 
-        figure {
-          figcaption {
-            margin-top: 200px;
-          }
-        }
+  .more-about-me {
+    background: #222;
+    border: dashed 1px #ffffff90;
+    padding: 20px 30px;
+    letter-spacing: 0.1rem;
+    line-height: 2.7ch;
+    flex-basis: 80%;
+
+    p {
+      text-align: justify;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    ul {
+      list-style-type: circle;
+      padding: 0 20px;
+
+      li {
+        margin-top: 20px;
       }
     }
   }
 
   @media (max-width: 900px) {
+    .me_card {
+      display: none;
+    }
+
     .content {
       padding: 20px 30px;
+      border: dashed 1px #ffffff90;
+    }
 
-      .tecnologias {
-        flex-direction: row;
+    ul {
+      text-align: justify;
+    }
 
-        .tecnologia {
-          position: relative;
-          width: 75px;
-          height: 75px;
-          display: grid;
-          place-items: center;
-          position: relative;
-
-          figure {
-            margin: 0;
-
-            figcaption {
-              margin: 0;
-              position: absolute;
-              text-align: center;
-              transform: translate(-50%, 150%);
-            }
-          }
-        }
-      }
+    .more-about-me {
+      padding: 0;
+      border: 0;
+      flex-basis: 100%;
     }
   }
 `;
@@ -68,132 +96,98 @@ export default function Section4() {
 
   if (language === "English") {
     return (
-      <StyledSection>
-        <h1>Which technologies I use?</h1>
+      <StyledSection id="about-me">
+        <h1>About me</h1>
 
         <div className="content">
-          <p>
-            There are a lot of techs available for front-end developing nowadays, but the
-            basics that every front-end dev must know is:
-          </p>
-
-          <div className="tecnologias">
-            <span
-              className="tecnologia"
-              data-tech="CSS3"
-            >
-              <figure>
+          <div className="me_card">
+            <div className="scroller-div">
+              <div className="profile_pic">
                 <Image
-                  src="/icons8-css3-400.png"
-                  layout="fill"
-                  alt="CSS3"
+                  src="/perfil1.png"
+                  alt="perfil"
+                  height={690}
+                  width={550}
+                  layout="intrinsic"
                 />
-                <figcaption>CSS3</figcaption>
-              </figure>
-            </span>
+              </div>
 
-            <span
-              className="tecnologia"
-              data-tech="JavaScript"
-            >
-              <figure>
-                <Image
-                  src="/js-big-icon.png"
-                  layout="fill"
-                  alt="JavaScript"
-                />
-                <figcaption>JavaScript</figcaption>
-              </figure>
-            </span>
+              <ul>
+                <li>João Pedro</li>
 
-            <span
-              className="tecnologia"
-              data-tech="HTML5"
-            >
-              <figure>
-                <Image
-                  src="/icons8-html-5-400.png"
-                  layout="fill"
-                  alt="HTML5"
-                />
-                <figcaption>HTML5</figcaption>
-              </figure>
-            </span>
+                <li>Rio de Janeiro - RJ</li>
+              </ul>
+            </div>
           </div>
 
-          <p>
-            These three techs together can be the base for any webpage, and a lot of new
-            techs were developed based on those three. Here are my favorites:
-          </p>
+          <div className="more-about-me">
+            <h3>Hello, my name is João 😁</h3>
 
-          <Tecnologias />
+            <p>I&#39;m a Front-end developer. I was born and raised in Rio de Janeiro.</p>
+
+            <p>Here are some jobs I had before becoming a Front-end:</p>
+
+            <ul>
+              <li>DJ/Audio Technician</li>
+
+              <li>Warehouse Worker</li>
+
+              <li>Transcriptionist</li>
+
+              <li>Dog walker</li>
+
+              <li>Dog trainer</li>
+            </ul>
+          </div>
         </div>
       </StyledSection>
     );
   }
 
   return (
-    <StyledSection>
-      <h1>Quais tecnologias eu uso?</h1>
+    <StyledSection id="about-me">
+      <h1>Sobre mim</h1>
 
       <div className="content">
-        <p>
-          As tecnologias disponíveis hoje são incontáveis, desde as mais simples até as
-          mais complexas. Entretando, sabe-se que para todo desenvolvedor front-end
-          existem três principais tecnologias a serem dominadas:
-        </p>
-
-        <div className="tecnologias">
-          <span
-            className="tecnologia"
-            data-tech="CSS3"
-          >
-            <figure>
+        <div className="me_card">
+          <div className="scroller-div">
+            <div className="profile_pic">
               <Image
-                src="/icons8-css3-400.png"
-                layout="fill"
-                alt="CSS3"
+                src="/perfil1.png"
+                alt="perfil"
+                height={690}
+                width={550}
+                layout="intrinsic"
               />
-              <figcaption>CSS3</figcaption>
-            </figure>
-          </span>
+            </div>
 
-          <span
-            className="tecnologia"
-            data-tech="JavaScript"
-          >
-            <figure>
-              <Image
-                src="/js-big-icon.png"
-                layout="fill"
-                alt="JavaScript"
-              />
-              <figcaption>JavaScript</figcaption>
-            </figure>
-          </span>
+            <ul>
+              <li>João Pedro</li>
 
-          <span
-            className="tecnologia"
-            data-tech="HTML5"
-          >
-            <figure>
-              <Image
-                src="/icons8-html-5-400.png"
-                layout="fill"
-                alt="HTML5"
-              />
-              <figcaption>HTML5</figcaption>
-            </figure>
-          </span>
+              <li>Rio de Janeiro - RJ</li>
+            </ul>
+          </div>
         </div>
 
-        <p>
-          Estas três juntas podem ser a base de qualquer página web, muitas tecnologias
-          novas foram desenvolvidas a partir do que estas três permitem. Para citar alguns
-          exemplos aqui vão as minhas preferidas:
-        </p>
+        <div className="more-about-me">
+          <h3>Ola, me chamo João 😁</h3>
 
-        <Tecnologias />
+          <p>Sou desenvolvedor Front-end nascido e criado no Rio de Janeiro.</p>
+
+          <p>Alguns trabalhos que tive antes de ser front-end:</p>
+
+          <ul>
+            <li>DJ/Técnico de som</li>
+
+            <li>Estoquista</li>
+
+            <li>Transcritor</li>
+
+            <li>Passeador de cães</li>
+
+            <li>Adestrador de cães</li>
+          </ul>
+        </div>
       </div>
     </StyledSection>
   );

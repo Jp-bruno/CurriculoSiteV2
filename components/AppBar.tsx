@@ -73,7 +73,6 @@ const AppBarMobileCss = css`
       & > li {
         border: 0 !important;
         width: 90%;
-        
       }
 
       &.closed {
