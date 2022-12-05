@@ -1,199 +1,127 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
-import styled from "styled-components";
-import Image from "next/image";
-import { SectionMixin } from "../../styles/minixs";
-import Tecnologias from "../Tecnologias";
 import { useContext } from "react";
+import styled from "styled-components";
 import { LanguageContext } from "../../context/languageContext";
+import { SectionMixin } from "../../styles/minixs";
+import ProjectCard from "../ProjectCard";
 
 const StyledSection = styled.section`
   ${SectionMixin}
 
   .content {
-    .tecnologias {
-      display: flex;
-      justify-content: space-evenly;
-      padding-bottom: 40px;
-      column-gap: 20px;
-
-      .tecnologia {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        display: grid;
-        place-items: center;
-
-        figure {
-          figcaption {
-            margin-top: 200px;
-          }
-        }
-      }
-    }
+    border: 0;
+    background: black;
+    padding: 0;
   }
 
   @media (max-width: 900px) {
     .content {
-      padding: 20px 30px;
-
-      .tecnologias {
-        flex-direction: row;
-
-        .tecnologia {
-          position: relative;
-          width: 75px;
-          height: 75px;
-          display: grid;
-          place-items: center;
-          position: relative;
-
-          figure {
-            margin: 0;
-
-            figcaption {
-              margin: 0;
-              position: absolute;
-              text-align: center;
-              transform: translate(-50%, 150%);
-            }
-          }
-        }
-      }
+      padding: 20px 5px 0;
     }
   }
 `;
 
+const cardsData = [
+  {
+    title: "E-commerce Website",
+    projectUrl: "https://jp-bruno.github.io/ecommerce-website/",
+    previewImg: "/ecommerce.png",
+    gitUrl: "https://github.com/Jp-bruno/ecommerce-website",
+    description: [
+      "Um site fictício de e-commerce feito em ReactJS. É um projeto do site Front-end Mentor.",
+      "A fictional e-commerce website made with ReactJS. It's a project from the Front-end Mentor website.",
+    ],
+    techs: ["HTML", "CSS", "JavaScript", "ReactJS", "Sass", "Styled-Components"],
+  },
+  {
+    title: "Space Tourism",
+    projectUrl: "https://jp-bruno.github.io/Space-Tourism/",
+    previewImg: "/space.png",
+    gitUrl: "https://github.com/Jp-bruno/Space-Tourism",
+    description: [
+      "Um site fictício de viagem espacial feito em HTML e CSS puros. É um projeto do site Front-end Mentor.",
+      "A fictional space travel website made with pure HTML and CSS. It's a project from the Front-end Mentor website.",
+    ],
+    techs: ["HTML", "CSS"],
+  },
+  {
+    title: "Easy Bank",
+    projectUrl: "https://easy-bank-fawn.vercel.app/",
+    previewImg: "/easybank.png",
+    gitUrl: "https://github.com/Jp-bruno/EasyBank",
+    description: [
+      "Uma landing page fictícia de internet banking. É um projeto do site Front-end Mentor.",
+      "A fictional landing page for Internet Banking website. It's a project from the Front-end Mentor website.",
+    ],
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Sass",
+      "ReactJS",
+      "NextJS",
+      "Styled-Components",
+    ],
+  },
+  {
+    title: "Task List",
+    projectUrl: "https://jp-bruno.github.io/TaskList/",
+    previewImg: "/tasklist.png",
+    gitUrl: "https://github.com/Jp-bruno/TaskList",
+    description: [
+      "Uma lista de tarefas que utiliza principalmente dos hooks useContext e useState do React.",
+      "A task list that uses mainly the useContext and useState React hooks",
+    ],
+    techs: ["HTML", "CSS", "JavaScript", "ReactJS"],
+  },
+  {
+    title: "Task List V2",
+    projectUrl: "https://jp-bruno.github.io/taskListV2/",
+    previewImg: "/tasklistv2.png",
+    gitUrl: "https://github.com/Jp-bruno/taskListV2",
+    description: [
+      "Uma versão aprimorada da lista de tarefas acima. Assim como na de cima usei ContextAPI para controlar a lista, além disso adicionei a funcionalidade do LocalStorage para manter os dados mesmo depois de fechar a aplicação.",
+      "A improved version of the last task list I made. Like the one above, this one uses the Context and State API's to control the list items and methods. This list also uses the LocalStorage to keep the data even after closing the application.",
+    ],
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "ReactJS",
+      "Emotion",
+      "Material-UI",
+      "LocalStorage",
+    ],
+  },
+  {
+    title: "Job List",
+    projectUrl: "https://jp-bruno.github.io/JobList/",
+    previewImg: "/joblist.png",
+    gitUrl: "https://github.com/Jp-bruno/JobList",
+    description: [
+      "Uma lista filtrável de vagas de emprego. É um projeto do site Front-end Mentor.",
+      "A filterable job list. It's a project from the Front-end Mentor website.",
+    ],
+    techs: ["HTML", "CSS", "JavaScript", "TypeScript", "ReactJS"],
+  },
+];
+
 export default function Section2() {
   const { language } = useContext(LanguageContext);
 
-  if (language === "English") {
-    return (
-      <StyledSection>
-        <h1>Which technologies I use?</h1>
-
-        <div className="content">
-          <p>
-            There are a lot of techs available for front-end developing nowadays, but the
-            basics that every front-end dev must know is:
-          </p>
-
-          <div className="tecnologias">
-            <span
-              className="tecnologia"
-              data-tech="CSS3"
-            >
-              <figure>
-                <Image
-                  src="/icons8-css3-400.png"
-                  layout="fill"
-                  alt="CSS3"
-                />
-                <figcaption>CSS3</figcaption>
-              </figure>
-            </span>
-
-            <span
-              className="tecnologia"
-              data-tech="JavaScript"
-            >
-              <figure>
-                <Image
-                  src="/js-big-icon.png"
-                  layout="fill"
-                  alt="JavaScript"
-                />
-                <figcaption>JavaScript</figcaption>
-              </figure>
-            </span>
-
-            <span
-              className="tecnologia"
-              data-tech="HTML5"
-            >
-              <figure>
-                <Image
-                  src="/icons8-html-5-400.png"
-                  layout="fill"
-                  alt="HTML5"
-                />
-                <figcaption>HTML5</figcaption>
-              </figure>
-            </span>
-          </div>
-
-          <p>
-            These three techs together can be the base for any webpage, and a lot of new
-            techs were developed based on those three. Here are my favorites:
-          </p>
-
-          <Tecnologias />
-        </div>
-      </StyledSection>
-    );
-  }
-
   return (
-    <StyledSection>
-      <h1>Quais tecnologias eu uso?</h1>
+    <StyledSection id="projects">
+      <h1>{language === "English" ? "My projects" : "Meus projetos"}</h1>
 
       <div className="content">
-        <p>
-          As tecnologias disponíveis hoje são incontáveis, desde as mais simples até as
-          mais complexas. Entretando, sabe-se que para todo desenvolvedor front-end
-          existem três principais tecnologias a serem dominadas:
-        </p>
-
-        <div className="tecnologias">
-          <span
-            className="tecnologia"
-            data-tech="CSS3"
-          >
-            <figure>
-              <Image
-                src="/icons8-css3-400.png"
-                layout="fill"
-                alt="CSS3"
-              />
-              <figcaption>CSS3</figcaption>
-            </figure>
-          </span>
-
-          <span
-            className="tecnologia"
-            data-tech="JavaScript"
-          >
-            <figure>
-              <Image
-                src="/js-big-icon.png"
-                layout="fill"
-                alt="JavaScript"
-              />
-              <figcaption>JavaScript</figcaption>
-            </figure>
-          </span>
-
-          <span
-            className="tecnologia"
-            data-tech="HTML5"
-          >
-            <figure>
-              <Image
-                src="/icons8-html-5-400.png"
-                layout="fill"
-                alt="HTML5"
-              />
-              <figcaption>HTML5</figcaption>
-            </figure>
-          </span>
-        </div>
-
-        <p>
-          Estas três juntas podem ser a base de qualquer página web, muitas tecnologias
-          novas foram desenvolvidas a partir do que estas três permitem. Para citar alguns
-          exemplos aqui vão as minhas preferidas:
-        </p>
-
-        <Tecnologias />
+        {cardsData.map(
+          ({ title, projectUrl, previewImg, gitUrl, description, techs }) => (
+            <ProjectCard
+              cardData={{ previewImg, title, projectUrl, gitUrl, techs, description }}
+              key={Math.random() * 1000}
+            />
+          )
+        )}
       </div>
     </StyledSection>
   );

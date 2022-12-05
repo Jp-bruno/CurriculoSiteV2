@@ -1,92 +1,23 @@
-import styled from "styled-components";
-import Image from "next/image";
-import { borderAndBackgroundMixin, SectionMixin } from "../../styles/minixs";
 import { useContext } from "react";
+import styled from "styled-components";
 import { LanguageContext } from "../../context/languageContext";
+import { SectionMixin } from "../../styles/minixs";
 
 const StyledSection = styled.section`
-  display: flex;
-  flex-direction: column;
   ${SectionMixin}
 
   .content {
-    display: flex;
-    position: relative;
-    padding: 0;
-    border: 0;
-  }
-
-  .me_card {
-    padding: 20px;
-    flex-basis: 20%;
-    column-gap: 60px;
-    display: flex;
-    flex-direction: column;
-    ${borderAndBackgroundMixin}
-
-    .scroller-div {
-      position: sticky;
-      top: 17%;
-    }
-
-    .profile_pic {
-      display: flex;
-      border-radius: 8px;
-      overflow: hidden;
-      justify-content: center;
-    }
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      row-gap: 15px;
-      padding: 10px 0;
-      text-align: center;
-    }
-  }
-
-  .more-about-me {
-    background: #222;
-    border: dashed 1px #ffffff90;
-    padding: 20px 30px;
-    letter-spacing: 0.1rem;
-    line-height: 2.7ch;
-    flex-basis: 80%;
-
-    p {
-      text-align: justify;
-      font-size: 18px;
+    blockquote {
       color: rgba(255, 255, 255, 0.8);
-    }
-
-    ul {
-      list-style-type: circle;
-      padding: 0 20px;
-
-      li {
-        margin-top: 20px;
-      }
     }
   }
 
   @media (max-width: 900px) {
-    .me_card {
-      display: none;
-    }
-
-    .content {
-      padding: 20px 30px;
-      border: dashed 1px #ffffff90;
-    }
-
-    ul {
-      text-align: justify;
-    }
-
-    .more-about-me {
+    blockquote {
       padding: 0;
-      border: 0;
-      flex-basis: 100%;
+      margin: 0;
+      text-align: center;
+      font-size: 1.1rem;
     }
   }
 `;
@@ -96,98 +27,63 @@ export default function Section4() {
 
   if (language === "English") {
     return (
-      <StyledSection id="about-me">
-        <h1>About me</h1>
+      <StyledSection id="about-frontend">
+        <h1>What a Front-end dev do?</h1>
 
         <div className="content">
-          <div className="me_card">
-            <div className="scroller-div">
-              <div className="profile_pic">
-                <Image
-                  src="/perfil1.png"
-                  alt="perfil"
-                  height={690}
-                  width={550}
-                  layout="intrinsic"
-                />
-              </div>
+          <p>
+            In summary, a Front-end dev job is to bring life to a webpage. Usually this
+            dev will do this from a design made by a UX/UI professional/team.
+          </p>
 
-              <ul>
-                <li>João Pedro</li>
-
-                <li>Rio de Janeiro - RJ</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="more-about-me">
-            <h3>Hello, my name is João 😁</h3>
-
-            <p>I&#39;m a Front-end developer. I was born and raised in Rio de Janeiro.</p>
-
-            <p>Here are some jobs I had before becoming a Front-end:</p>
-
-            <ul>
-              <li>DJ/Audio Technician</li>
-
-              <li>Warehouse Worker</li>
-
-              <li>Transcriptionist</li>
-
-              <li>Dog walker</li>
-
-              <li>Dog trainer</li>
-            </ul>
-          </div>
+          <p>
+            The Front-end dev is the professional that write the code that represents
+            not only the visual structure, but also the aesthetic and semantic structure,
+            making the design made by the UX/UI team interactive and functional.
+          </p>
         </div>
       </StyledSection>
     );
   }
-
   return (
-    <StyledSection id="about-me">
-      <h1>Sobre mim</h1>
+    <StyledSection id="about-frontend">
+      <h1>O que um front-end faz?</h1>
 
       <div className="content">
-        <div className="me_card">
-          <div className="scroller-div">
-            <div className="profile_pic">
-              <Image
-                src="/perfil1.png"
-                alt="perfil"
-                height={690}
-                width={550}
-                layout="intrinsic"
-              />
-            </div>
+        <p>
+          De forma resumida, o trabalho de um desenvolvedor front-end é dar vida à paginas
+          web. Geralmente esse desenvolvedor fará isso através de um design produzido por
+          uma equipe de UX/UI, responsáveis pelo <i>feeling</i> da página.
+        </p>
 
-            <ul>
-              <li>João Pedro</li>
+        {/* <p>
+          Eu gosto de comparar o processo de construção de páginas web com o de
+          construção de prédios. Quando tenho que explicar o que um front-end
+          faz eu geralmente digo:
+        </p>
 
-              <li>Rio de Janeiro - RJ</li>
-            </ul>
-          </div>
-        </div>
+        <blockquote>
+          <i>
+            Imagine que um site é um prédio prestes a ser construído. O
+            arquiteto aqui é representado pela a equipe de UX/UI, responsáveis
+            pelo prospecto visual do projeto, dando uma ideia de como a
+            estrutura deve parecer e se comportar visualmente. Em seguida temos
+            o engenheiro, representado aqui pelo engenheiro de software, ele irá
+            ponderar se o projeto é viável e como será executado, ou qual seria
+            a melhor maneira de executá-lo com os recursos disponíveis. E então
+            chegamos ao pedreiro, representando pelo desenvolvedor front-end, o
+            pedreiro é o profissional que irá colocar tijolo sobre tijolo,
+            erguendo a estrutura do que em breve será o prédio (ou no nosso
+            caso, o site).
+          </i>
+        </blockquote> */}
 
-        <div className="more-about-me">
-          <h3>Ola, me chamo João 😁</h3>
-
-          <p>Sou desenvolvedor Front-end nascido e criado no Rio de Janeiro.</p>
-
-          <p>Alguns trabalhos que tive antes de ser front-end:</p>
-
-          <ul>
-            <li>DJ/Técnico de som</li>
-
-            <li>Estoquista</li>
-
-            <li>Transcritor</li>
-
-            <li>Passeador de cães</li>
-
-            <li>Adestrador de cães</li>
-          </ul>
-        </div>
+        <p>
+          O desenvolvedor front-end é o profissional que irá escrever o código que
+          representa a estrutura não só visual, estética, como também semântica da página
+          web, dando vida ao design feito pela equipe de UX/UI tornando-o interativo e
+          funcional.
+        </p>
       </div>
     </StyledSection>
   );
