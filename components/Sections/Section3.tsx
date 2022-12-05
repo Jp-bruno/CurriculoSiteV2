@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { LanguageContext } from "../../context/languageContext";
 import { SectionMixin } from "../../styles/minixs";
 
 const StyledSection = styled.section`
@@ -21,16 +23,37 @@ const StyledSection = styled.section`
 `;
 
 export default function Section3() {
+  const { language } = useContext(LanguageContext);
+
+  if (language === "English") {
+    return (
+      <StyledSection id="about-frontend">
+        <h1>What a Front-end dev do?</h1>
+
+        <div className="content">
+          <p>
+            In summary, a Front-end dev job is to bring life to a webpage. Usually this
+            dev will do this from a design made by a UX/UI professional/team.
+          </p>
+
+          <p>
+            The Front-end dev is the professional that write the code that represents
+            not only the visual structure, but also the aesthetic and semantic structure,
+            making the design made by the UX/UI team interactive and functional.
+          </p>
+        </div>
+      </StyledSection>
+    );
+  }
   return (
     <StyledSection id="about-frontend">
       <h1>O que um front-end faz?</h1>
 
       <div className="content">
         <p>
-          De forma resumida, o trabalho de um desenvolvedor front-end é dar vida
-          à paginas web. Geralmente esse desenvolvedor fará isso através de um
-          design produzido por uma equipe de UX/UI, responsáveis pelo{" "}
-          <i>feeling</i> da página.
+          De forma resumida, o trabalho de um desenvolvedor front-end é dar vida à paginas
+          web. Geralmente esse desenvolvedor fará isso através de um design produzido por
+          uma equipe de UX/UI, responsáveis pelo <i>feeling</i> da página.
         </p>
 
         {/* <p>
@@ -56,10 +79,10 @@ export default function Section3() {
         </blockquote> */}
 
         <p>
-          O desenvolvedor front-end é o profissional que irá escrever o código
-          que representa a estrutura não só visual, estética, como também
-          semântica da página web, dando vida ao design feito pela equipe de
-          UX/UI tornando-o interativo e funcional.
+          O desenvolvedor front-end é o profissional que irá escrever o código que
+          representa a estrutura não só visual, estética, como também semântica da página
+          web, dando vida ao design feito pela equipe de UX/UI tornando-o interativo e
+          funcional.
         </p>
       </div>
     </StyledSection>

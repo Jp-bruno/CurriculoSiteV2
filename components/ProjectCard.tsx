@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LanguageContext } from "../context/languageContext";
 
 const StyledCard = styled.div`
   border: dashed 1px #ffffffaa;
@@ -73,10 +74,17 @@ const StyledCard = styled.div`
   }
 
   .more-details {
-    transition: width 1s ease;
-    height: 0px;
     overflow: hidden;
-    transition: height 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .more-details-absolute-div {
+      transition: max-height 0.9s linear;
+      position: relative;
+      flex: 0;
+      max-height: 0;
+    }
 
     .more-details-text,
     .more-details-techs {
@@ -90,7 +98,10 @@ const StyledCard = styled.div`
     }
 
     &.open {
-      height: 20vh;
+      .more-details-absolute-div {
+        flex: 1;
+        max-height: 400px;
+      }
     }
   }
 
@@ -151,13 +162,14 @@ type ProjectCardProps = {
     projectUrl: string;
     previewImg: string;
     gitUrl: string;
-    description: string;
+    description: string[];
     techs: string[];
   };
 };
 
 export default function ProjectCard({ cardData }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { language } = useContext(LanguageContext);
 
   function toggleMoreInfo() {
     setIsOpen((prevState) => !prevState);
@@ -183,7 +195,11 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
         </a>
 
         <div className="project-details">
-          <a href={cardData.projectUrl} target="_blank" rel="noreferrer">
+          <a
+            href={cardData.projectUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             <h3 className="project-title">{cardData.title}</h3>
           </a>
 
@@ -193,31 +209,39 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
             rel="noreferrer"
             className="project-git"
           >
-            Repositório Git
+            {language === "English" ? "Git repo" : "Repositório Git"}
           </a>
         </div>
       </div>
 
-      <button className="show-more-button" onClick={toggleMoreInfo}>
+      <button
+        className="show-more-button"
+        onClick={toggleMoreInfo}
+      >
         <small> Show {isOpen ? "less" : "more"} </small>
       </button>
 
       <div className={`more-details ${isOpen ? "open" : "closed"}`}>
-        <p className="more-details-text">{cardData.description}</p>
+        <div className="more-details-absolute-div">
+          <p className="more-details-text">{language === "English" ? cardData.description[1] : cardData.description[0]}</p>
 
-        <ul className="more-details-techs">
-          Tecnologias:
-          {cardData.techs.map((tech, index) => {
-            return (
-              <>
-                {index === 0 ? "" : "○"}
-                <li key={Math.random() * 1000} className="tech">
-                  {tech}
-                </li>
-              </>
-            );
-          })}
-        </ul>
+          <ul className="more-details-techs">
+            {language === "English" ? "Technologies" : "Tecnologias"}
+            {cardData.techs.map((tech, index) => {
+              return (
+                <>
+                  {index === 0 ? "" : "○"}
+                  <li
+                    key={Math.random() * 1000}
+                    className="tech"
+                  >
+                    {tech}
+                  </li>
+                </>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </StyledCard>
   );

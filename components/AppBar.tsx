@@ -1,148 +1,195 @@
-import Link from 'next/link';
-import styled, { css } from 'styled-components';
-import TagIcon from './TagIcon';
+import Link from "next/link";
+import styled, { css } from "styled-components";
+import TagIcon from "./TagIcon";
 
-import HamburguerButton from './HamburguerButton';
-import { useState } from 'react';
+import HamburguerButton from "./HamburguerButton";
+import { useState, useContext } from "react";
+import { LanguageContext } from "../context/languageContext";
 
 const AppBarMobileCss = css`
-    padding: 20px ;
+  padding: 20px;
 
-    nav {
-        justify-content: space-between;
-        position: relative;
+  nav {
+    justify-content: space-between;
+    position: relative;
+  }
+
+  ul {
+    position: absolute;
+    flex-direction: column;
+    background: #111;
+    transition: top 0.4s ease, opacity 0.4s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px #ffffff90;
+
+    li,
+    li:first-of-type {
+      margin: 0;
+      padding: 20px 0;
     }
 
-    ul {
-        position: absolute;
-        flex-direction: column;
-        background: #111;
-        transition: top 0.4s ease, opacity 0.4s ease;
-        border-radius: 8px;
-        overflow: hidden;
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        border: solid 1px #ffffff90;
-
-        li, li:first-of-type {
-            margin: 0;
-            padding: 20px 0;
-        }
-
-        &.mobile-closed {
-            top: -400px;
-            opacity: 1;
-            pointer-events: none;
-        }
-
-        &.mobile-open {
-            top: 50px;
-        }
+    &.mobile-closed {
+      top: -400px;
+      opacity: 1;
+      pointer-events: none;
     }
+
+    &.mobile-open {
+      top: 50px;
+    }
+  }
 `;
 
 const StyledAppBar = styled.header`
-    padding: 22px 100px;
-    position: sticky;
-    top: 0;
-    background: black;
-    z-index: 10;
+  padding: 22px 100px;
+  position: sticky;
+  top: 0;
+  background: black;
+  z-index: 10;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #111;
+
+  nav {
     width: 100%;
-    color: white;
     display: flex;
     align-items: center;
-    background-color: #111;
+  }
 
-    nav {
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
+  ul {
+    display: flex;
+    width: 100%;
 
-    ul {
-        display: flex;
-        width: 100%;
+    li {
+      margin-inline: 20px;
 
-        li {
-            margin-inline: 20px;
+      &:first-of-type {
+        margin-left: 30px;
+        flex-grow: 3;
+      }
 
-            &:first-of-type {
-                margin-left: 30px;
-                flex-grow: 3;
-            }
+      &:last-of-type {
+        margin-right: 0px;
+      }
 
-            &:last-of-type {
-                margin-right: 0px;
-            }
+      &:not(&:first-of-type) {
+        flex-grow: 0;
+      }
 
-            &:not(&:first-of-type) {
-                flex-grow: 0;
-            }
+      a {
+        position: relative;
 
-            a {
-                position: relative;
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background: white;
-                    left: 0;
-                    bottom: -10px;
-                    transform: scaleX(0);
-                    transition: transform 0.3s ease;
-                }
-    
-                &:hover, &:focus {
-                    &::after {
-                        transform: scaleX(1);
-                    }
-                }
-            }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: white;
+          left: 0;
+          bottom: -10px;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
         }
-    }
 
-    @media (max-width: 900px) {
-        ${AppBarMobileCss}
+        &:hover,
+        &:focus {
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
+  }
+
+  @media (max-width: 900px) {
+    ${AppBarMobileCss}
+  }
 `;
 
 export default function Appbar() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    function toggleMobileMenu() {
-        setMobileMenuOpen(prevState => !prevState)
-    }
+  const { language, changeLanguage } = useContext(LanguageContext);
 
+  function toggleMobileMenu() {
+    setMobileMenuOpen((prevState) => !prevState);
+  }
+
+  if (language === "English") {
     return (
-        <StyledAppBar>
-            <nav>
-                <TagIcon />
-                <ul className={mobileMenuOpen ? 'mobile-open' : 'mobile-closed'}>
-                    <li onClick={toggleMobileMenu}>
-                        <Link href={'/'}>Início</Link>
-                    </li>
+      <StyledAppBar>
+        <nav>
+          <TagIcon />
+          <ul className={mobileMenuOpen ? "mobile-open" : "mobile-closed"}>
+            <li onClick={toggleMobileMenu}>
+              <Link href={"/"}>Start</Link>
+            </li>
 
-                    <li onClick={toggleMobileMenu}>
-                        <Link href={'/#projects'}>Meus projetos</Link>
-                    </li>
+            <li onClick={toggleMobileMenu}>
+              <Link href={"/#projects"}>My projects</Link>
+            </li>
 
-                    <li onClick={toggleMobileMenu}>
-                        <Link href={'/#about-me'}>Sobre mim</Link>
-                    </li>
+            <li onClick={toggleMobileMenu}>
+              <Link href={"/#about-me"}>About me</Link>
+            </li>
 
-                    <li onClick={toggleMobileMenu}>
-                        <Link href={'/#about-frontend'}>Sobre ser Front-end</Link>
-                    </li>
+            <li onClick={toggleMobileMenu}>
+              <Link href={"/#about-frontend"}>About Front-end</Link>
+            </li>
 
-                    <li onClick={toggleMobileMenu}>
-                        <Link href={'/#contact'}>Contato</Link>
-                    </li>
-                </ul>
-                <HamburguerButton isOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
-            </nav>
-        </StyledAppBar>
-    )
+            <li onClick={toggleMobileMenu}>
+              <Link href={"/#contact"}>Contact</Link>
+            </li>
+
+            <li onClick={changeLanguage}>Lang</li>
+          </ul>
+          <HamburguerButton
+            isOpen={mobileMenuOpen}
+            toggleMobileMenu={toggleMobileMenu}
+          />
+        </nav>
+      </StyledAppBar>
+    );
+  }
+
+  return (
+    <StyledAppBar>
+      <nav>
+        <TagIcon />
+        <ul className={mobileMenuOpen ? "mobile-open" : "mobile-closed"}>
+          <li onClick={toggleMobileMenu}>
+            <Link href={"/"}>Início</Link>
+          </li>
+
+          <li onClick={toggleMobileMenu}>
+            <Link href={"/#projects"}>Meus projetos</Link>
+          </li>
+
+          <li onClick={toggleMobileMenu}>
+            <Link href={"/#about-me"}>Sobre mim</Link>
+          </li>
+
+          <li onClick={toggleMobileMenu}>
+            <Link href={"/#about-frontend"}>Sobre ser Front-end</Link>
+          </li>
+
+          <li onClick={toggleMobileMenu}>
+            <Link href={"/#contact"}>Contato</Link>
+          </li>
+
+          <li onClick={changeLanguage}>Idioma</li>
+        </ul>
+        <HamburguerButton
+          isOpen={mobileMenuOpen}
+          toggleMobileMenu={toggleMobileMenu}
+        />
+      </nav>
+    </StyledAppBar>
+  );
 }

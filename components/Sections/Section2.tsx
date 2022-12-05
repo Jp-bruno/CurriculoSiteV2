@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { borderAndBackgroundMixin, SectionMixin } from "../../styles/minixs";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/languageContext";
 
 const StyledSection = styled.section`
   display: flex;
@@ -90,6 +92,58 @@ const StyledSection = styled.section`
 `;
 
 export default function Section2() {
+  const { language } = useContext(LanguageContext);
+
+  if (language === "English") {
+    return (
+      <StyledSection id="about-me">
+        <h1>About me</h1>
+
+        <div className="content">
+          <div className="me_card">
+            <div className="scroller-div">
+              <div className="profile_pic">
+                <Image
+                  src="/perfil1.png"
+                  alt="perfil"
+                  height={690}
+                  width={550}
+                  layout="intrinsic"
+                />
+              </div>
+
+              <ul>
+                <li>João Pedro</li>
+
+                <li>Rio de Janeiro - RJ</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="more-about-me">
+            <h3>Hello, my name is João 😁</h3>
+
+            <p>I&#39;m a Front-end developer. I was born and raised in Rio de Janeiro.</p>
+
+            <p>Here are some jobs I had before becoming a Front-end:</p>
+
+            <ul>
+              <li>DJ/Audio Technician</li>
+
+              <li>Warehouse Worker</li>
+
+              <li>Transcriptionist</li>
+
+              <li>Dog walker</li>
+
+              <li>Dog trainer</li>
+            </ul>
+          </div>
+        </div>
+      </StyledSection>
+    );
+  }
+
   return (
     <StyledSection id="about-me">
       <h1>Sobre mim</h1>
@@ -123,25 +177,15 @@ export default function Section2() {
           <p>Alguns trabalhos que tive antes de ser front-end:</p>
 
           <ul>
-            <li>
-              DJ/Técnico de som
-            </li>
+            <li>DJ/Técnico de som</li>
 
-            <li>
-              Estoquista
-            </li>
+            <li>Estoquista</li>
 
-            <li>
-              Transcritor
-            </li>
+            <li>Transcritor</li>
 
-            <li>
-              Passeador de cães
-            </li>
+            <li>Passeador de cães</li>
 
-            <li>
-              Adestrador de cães
-            </li>
+            <li>Adestrador de cães</li>
           </ul>
         </div>
       </div>
