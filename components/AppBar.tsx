@@ -39,11 +39,12 @@ const AppBarMobileCss = css`
 
     &.mobile-closed {
       top: -440px;
-      opacity: 1;
+      opacity: 0;
       pointer-events: none;
     }
 
     &.mobile-open {
+      opacity: 1;
       top: 50px;
     }
   }
@@ -84,7 +85,6 @@ const AppBarMobileCss = css`
       &.open {
         .language-button {
           transition-delay: 500ms;
-
         }
       }
 
