@@ -66,13 +66,32 @@ const AppBarMobileCss = css`
       background-color: #111;
       left: -1px !important;
       width: 100.5% !important;
+      display: flex;
+      align-items: center;
 
       & > li {
         border: 0 !important;
+        width: 90%;
+        
+      }
+
+      &.closed {
+        .language-button {
+          opacity: 0;
+        }
+      }
+
+      &.open {
+        .language-button {
+          transition-delay: 500ms;
+
+        }
       }
 
       .language-button {
         border: 0;
+        opacity: 1;
+        transition: opacity 0.5s ease;
       }
     }
   }
