@@ -112,12 +112,7 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ cardData }: ProjectCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
   const { language } = useContext(LanguageContext);
-
-  function toggleMoreInfo() {
-    setIsOpen((prevState) => !prevState);
-  }
 
   return (
     <StyledCard key={Math.random() * 2000}>
@@ -159,34 +154,25 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
           </a>
         </div>
 
-        <div className={`more-details ${isOpen ? "open" : "closed"}`}>
-          <p className="more-details-text">
-            {language === "English" ? cardData.description[1] : cardData.description[0]}
-          </p>
+        <p className="more-details-text">
+          {language === "English" ? cardData.description[1] : cardData.description[0]}
+        </p>
 
-          <ul className="more-details-techs">
-            {cardData.techs.map((tech) => {
-              return (
-                <>
-                  <li
-                    key={Math.random() * 1000}
-                    className="tech"
-                  >
-                    {tech}
-                  </li>
-                </>
-              );
-            })}
-          </ul>
-        </div>
+        <ul className="more-details-techs">
+          {cardData.techs.map((tech) => {
+            return (
+              <>
+                <li
+                  key={Math.random() * 1000}
+                  className="tech"
+                >
+                  {tech}
+                </li>
+              </>
+            );
+          })}
+        </ul>
       </div>
-
-      {/* <button
-        className="show-more-button"
-        onClick={toggleMoreInfo}
-      >
-        <small> Show {isOpen ? "less" : "more"} </small>
-      </button> */}
     </StyledCard>
   );
 }
