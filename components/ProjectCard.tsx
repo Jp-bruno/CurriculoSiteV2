@@ -49,21 +49,19 @@ const StyledCard = styled.div`
       }
     }
 
-    .more-details {
-      .more-details-techs {
-        display: flex;
-        column-gap: 15px;
-        flex-wrap: wrap;
-        row-gap: 10px;
+    .more-details-techs {
+      display: flex;
+      column-gap: 15px;
+      flex-wrap: wrap;
+      row-gap: 10px;
 
-        .tech {
-          border: solid 1px white;
-          padding: 3px 4px;
-          cursor: default;
+      .tech {
+        border: solid 1px white;
+        padding: 3px 4px;
+        cursor: default;
 
-          &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
         }
       }
     }
