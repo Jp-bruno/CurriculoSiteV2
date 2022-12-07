@@ -1,158 +1,102 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Image from "next/image";
 import { useContext, useState } from "react";
 import { LanguageContext } from "../context/languageContext";
 
-const StyledCard = styled.div`
-  border: dashed 1px #ffffffaa;
-  display: flex;
-  padding: 20px 0 0;
-  column-gap: 50px;
-  justify-content: center;
-  border-left: 0;
-  flex-direction: column;
+const MobileCss = css`
+  &:nth-of-type(odd),
+  &:nth-of-type(even) {
+    flex-direction: column;
+    border: dashed 1px #ffffff8f;
+    padding: 20px;
 
-  .project-image {
-    flex: 1;
-    display: flex;
+    .project-details {
+      padding: 0px;
+    }
   }
+`;
+
+const StyledCard = styled.div`
+  display: flex;
+  padding: 20px 0;
+  border: dashed 1px #ffffffaa;
+  column-gap: 20px;
+  flex-direction: row;
+  border-left: 0;
 
   .project-details {
     flex: 1;
-
-    a {
-      transition: color 0.2s ease;
-
-      &:hover,
-      &:focus-visible {
-        color: #ff006e;
-      }
-    }
-
-    .project-title {
-      margin: 0;
-      text-align: left;
-      font-size: 1.5rem;
-    }
-
-    .project-git {
-      position: relative;
-
-      &:hover {
-        &::after {
-          transform: scaleX(1);
-        }
-      }
-
-      &::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 1px;
-        background: white;
-        left: 0;
-        bottom: -5px;
-        transition: transform 0.3s ease;
-        transform: scaleX(0);
-        transform-origin: left;
-      }
-    }
-  }
-
-  .image-title-flex-parent {
-    display: flex;
-    column-gap: 20px;
-    align-items: center;
-  }
-
-  .show-more-button {
-    background: 0;
-    border: 0;
-    margin: 10px 0;
-    color: #ffffff50;
-    cursor: pointer;
-  }
-
-  .more-details {
-    overflow: hidden;
-    position: relative;
     display: flex;
     flex-direction: column;
 
-    .more-details-absolute-div {
-      transition: max-height 0.9s linear;
-      position: relative;
-      flex: 0;
-      max-height: 0;
+    .project-details-title-and-git {
+      a {
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+          color: #ff006e;
+        }
+      }
+
+      .project-title {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      .project-git {
+        display: block;
+      }
     }
 
-    .more-details-text,
-    .more-details-techs {
-      padding: 0 50px;
-    }
+    .more-details {
+      .more-details-techs {
+        display: flex;
+        column-gap: 15px;
+        flex-wrap: wrap;
+        row-gap: 10px;
 
-    .more-details-techs {
-      display: flex;
-      column-gap: 15px;
-      flex-wrap: wrap;
-    }
+        .tech {
+          border: solid 1px white;
+          padding: 3px 4px;
+          cursor: default;
 
-    &.open {
-      .more-details-absolute-div {
-        flex: 1;
-        max-height: 400px;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
       }
     }
   }
 
-  &:nth-of-type(odd) {
+  &:nth-last-of-type(even) {
     border-left: dashed 1px #ffffffaa;
     border-right: 0;
-
-    .image-title-flex-parent {
-      flex-direction: row-reverse;
-    }
+    flex-direction: row-reverse;
 
     .project-details {
-      text-align: right;
+      padding-left: 20px;
 
-      .project-title {
-        text-align: right;
-      }
-
+      .project-title,
       .project-git {
-        &::after {
-          transform-origin: right;
-        }
+        text-align: left;
+      }
+    }
+  }
+
+  &:nth-last-of-type(odd) {
+    .project-details {
+      padding-right: 20px;
+
+      .project-title,
+      .project-git {
+        text-align: left;
       }
     }
   }
 
   @media (max-width: 900px) {
-    column-gap: 20px;
-    padding: 20px 10px 0;
-
-    &,
-    &:nth-of-type(odd) {
-      flex-direction: column;
-    }
-
-    .project-details .project-title {
-      font-size: 1rem;
-    }
-
-    .more-details .more-details-text {
-      padding: 0 20px 20px 20px;
-    }
-
-    .more-details {
-      .more-details-techs {
-        padding: 0 20px;
-      }
-      &.open {
-        height: 50vh;
-      }
-    }
+    ${MobileCss}
   }
 `;
 
@@ -177,31 +121,33 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
 
   return (
     <StyledCard key={Math.random() * 2000}>
-      <div className="image-title-flex-parent">
-        <a
-          className="project-image"
-          title="Clique para ir até o site."
-          href={cardData.projectUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image
-            src={cardData.previewImg}
-            alt={cardData.title}
-            width={1366 / 2}
-            height={767 / 2}
-            layout="intrinsic"
-          />
-        </a>
+      <a
+        className="project-image"
+        title="Clique para ir até o site."
+        href={cardData.projectUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image
+          src={cardData.previewImg}
+          alt={cardData.title}
+          width={1366 / 2}
+          height={767 / 2}
+          layout="intrinsic"
+        />
+      </a>
 
-        <div className="project-details">
-          <a
-            href={cardData.projectUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h3 className="project-title">{cardData.title}</h3>
-          </a>
+      <div className="project-details">
+        <div className="project-details-title-and-git">
+          <h3 className="project-title">
+            <a
+              href={cardData.projectUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {cardData.title}
+            </a>
+          </h3>
 
           <a
             href={cardData.gitUrl}
@@ -212,25 +158,16 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
             {language === "English" ? "Git repo" : "Repositório Git"}
           </a>
         </div>
-      </div>
 
-      <button
-        className="show-more-button"
-        onClick={toggleMoreInfo}
-      >
-        <small> Show {isOpen ? "less" : "more"} </small>
-      </button>
-
-      <div className={`more-details ${isOpen ? "open" : "closed"}`}>
-        <div className="more-details-absolute-div">
-          <p className="more-details-text">{language === "English" ? cardData.description[1] : cardData.description[0]}</p>
+        <div className={`more-details ${isOpen ? "open" : "closed"}`}>
+          <p className="more-details-text">
+            {language === "English" ? cardData.description[1] : cardData.description[0]}
+          </p>
 
           <ul className="more-details-techs">
-            {language === "English" ? "Technologies" : "Tecnologias"}
-            {cardData.techs.map((tech, index) => {
+            {cardData.techs.map((tech) => {
               return (
                 <>
-                  {index === 0 ? "" : "○"}
                   <li
                     key={Math.random() * 1000}
                     className="tech"
@@ -243,6 +180,13 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
           </ul>
         </div>
       </div>
+
+      {/* <button
+        className="show-more-button"
+        onClick={toggleMoreInfo}
+      >
+        <small> Show {isOpen ? "less" : "more"} </small>
+      </button> */}
     </StyledCard>
   );
 }

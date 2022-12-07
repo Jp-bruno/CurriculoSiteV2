@@ -259,9 +259,9 @@ export default function Appbar() {
               <Link href={"/#about-me"}>About me</Link>
             </li>
 
-            <li onClick={closeMobileMenu}>
+            {/* <li onClick={closeMobileMenu}>
               <Link href={"/#about-frontend"}>About Front-end</Link>
-            </li>
+            </li> */}
 
             <li onClick={closeMobileMenu}>
               <Link href={"/#contact"}>Contact</Link>

@@ -16,10 +16,6 @@ export const SectionMixin = css`
     padding: 10px;
   }
 
-  & h3 {
-    text-align: center;
-  }
-
   & .content {
     border: dashed 1px #ffffff90;
     background: #222;
@@ -45,6 +41,9 @@ export const SectionMixin = css`
     }
 
     & .content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
       padding: 20px 30px;
     }
 
