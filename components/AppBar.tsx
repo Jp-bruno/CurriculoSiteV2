@@ -237,8 +237,9 @@ export default function Appbar() {
   }
 
   function selectLanguage(language: "Português" | "English") {
-    setLanguageMenuOpen(false);
+    toggleLanguageMenu()
     changeLanguage(language);
+    closeMobileMenu();
   }
 
   if (language === "English") {
