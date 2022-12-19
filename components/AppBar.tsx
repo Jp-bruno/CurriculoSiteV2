@@ -79,7 +79,6 @@ const StyledAppBar = styled.header`
       align-content: center;
 
       &:first-of-type {
-        margin-left: 30px;
         flex-grow: 3;
       }
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledList = styled.li`
   position: relative;
 
-  button {
+  .change-language-menu-open-button {
     cursor: pointer;
   }
 
@@ -29,6 +29,7 @@ const StyledList = styled.li`
       border: solid 1px white;
       text-align: center;
       display: flex;
+      width: 100%;
 
       &:first-of-type {
         margin-top: 20px;
@@ -50,36 +51,38 @@ const StyledList = styled.li`
   @media (max-width: 900px) {
     width: 100%;
     justify-content: center;
-    padding: 30px 0;
+    flex-direction: column;
+
+    .change-language-menu-open-button {
+      width: 50%;
+      margin-inline: auto;
+    }
 
     .language-list {
-      padding-top: 10px;
-      top: 60px;
-      border: 0;
-      border-left: solid 1px rgba(255, 255, 255, 0.5);
-      border-right: solid 1px rgba(255, 255, 255, 0.5);
-      border-bottom: solid 1px rgba(255, 255, 255, 0.5);
-      border-radius: 0;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-      background-color: #111;
-      left: -1px !important;
-      width: 100.5% !important;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%) scaleY(0) !important;
       display: flex;
       align-items: center;
+      border: 0;
 
-      & > li {
-        border: 0 !important;
-        width: 90%;
+      .language-button-li {
+        border: 0;
+        width: auto;
       }
 
       &.closed {
+        transition-delay: 500ms;
+
         .language-button {
           opacity: 0;
         }
       }
 
       &.open {
+        transform: translateX(-50%) scaleY(1) !important;
+        transition: transform;
+
         .language-button {
           transition-delay: 500ms;
         }
@@ -117,6 +120,7 @@ export default function LanguageMenu({
     <>
       <StyledList>
         <button
+          className="change-language-menu-open-button"
           title="Change language"
           onClick={toggleLanguageMenu}
         >
@@ -124,10 +128,16 @@ export default function LanguageMenu({
         </button>
 
         <ul className={`language-list ${languageMenuOpen ? "open" : "closed"}`}>
-          <li onClick={() => selectLanguage("Português")}>
+          <li
+            onClick={() => selectLanguage("Português")}
+            className="language-button-li"
+          >
             <button className="language-button">Português</button>
           </li>
-          <li onClick={() => selectLanguage("English")}>
+          <li
+            onClick={() => selectLanguage("English")}
+            className="language-button-li"
+          >
             <button className="language-button">English</button>
           </li>
         </ul>
