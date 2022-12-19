@@ -39,7 +39,7 @@ const StyledList = styled.li`
         padding: 10px;
         background-color: #111;
 
-        &:hover {
+        &:not(:disabled):hover {
           background-color: #ffe05f;
           color: black;
         }
