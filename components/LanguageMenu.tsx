@@ -38,10 +38,12 @@ const StyledList = styled.li`
         flex: 1;
         padding: 10px;
         background-color: #111;
+        
 
         &:not(:disabled):hover {
           background-color: #ffe05f;
           color: black;
+          cursor: pointer;
         }
       }
     }
