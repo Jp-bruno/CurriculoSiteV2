@@ -178,7 +178,6 @@ export default function Section1() {
       textoArray.forEach((element, index) => {
         setTimeout(() => {
           if (index + 1 === string.length) {
-            console.log("ok");
             bannerTitle.textContent += element;
             setTimeout(() => {
               resolve();

@@ -54,7 +54,7 @@ const StyledSection = styled.section`
     flex-basis: 80%;
 
     p {
-      text-align: justify;
+      text-align: left;
       font-size: 18px;
       color: rgba(255, 255, 255, 0.8);
     }

@@ -10,6 +10,10 @@ const StyledList = styled.li`
   }
 
   .language-list {
+    &.closed {
+      transform: scaleY(0);
+    }
+
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -18,13 +22,8 @@ const StyledList = styled.li`
     left: -35%;
     transition: transform 0.3s ease;
     transform-origin: top;
-    transform: scaleY(0);
 
-    &.open {
-      transform: scaleY(1);
-    }
-
-    li {
+    .language-button-li {
       margin: 0;
       border: solid 1px white;
       text-align: center;
@@ -49,49 +48,35 @@ const StyledList = styled.li`
   }
 
   @media (max-width: 900px) {
-    width: 100%;
+    width: 60% !important;
     justify-content: center;
     flex-direction: column;
+    border-top: solid 1px #ffffff90;
 
     .change-language-menu-open-button {
-      width: 50%;
-      margin-inline: auto;
+      display: none;
     }
 
     .language-list {
-      left: 50%;
       position: relative;
-      transform: translateX(-50%) scaleY(0) !important;
       display: flex;
       align-items: center;
       border: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 0;
 
+      &.closed {
+        transform: scaleY(1);
+      }
       .language-button-li {
         border: 0;
         width: auto;
       }
 
-      &.closed {
-        transition-delay: 500ms;
-
-        .language-button {
-          opacity: 0;
-        }
-      }
-
-      &.open {
-        transform: translateX(-50%) scaleY(1) !important;
-        transition: transform;
-
-        .language-button {
-          transition-delay: 500ms;
-        }
-      }
-
       .language-button {
         border: 0;
-        opacity: 1;
-        transition: opacity 0.5s ease;
       }
     }
   }
@@ -132,13 +117,23 @@ export default function LanguageMenu({
             onClick={() => selectLanguage("Português")}
             className="language-button-li"
           >
-            <button className="language-button">Português</button>
+            <button
+              className="language-button"
+              disabled={language === "Português" ? true : false}
+            >
+              Português
+            </button>
           </li>
           <li
             onClick={() => selectLanguage("English")}
             className="language-button-li"
           >
-            <button className="language-button">English</button>
+            <button
+              className="language-button"
+              disabled={language === "English" ? true : false}
+            >
+              English
+            </button>
           </li>
         </ul>
       </StyledList>
