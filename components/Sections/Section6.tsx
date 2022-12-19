@@ -49,7 +49,7 @@ export default function Section6() {
               await navigator.clipboard.writeText(ev.currentTarget.textContent || "")
             }
           >
-            bruno.machado98@hotmail.com
+            jp.bruno.dev@gmail.com
           </button>
         </span>
       </div>
