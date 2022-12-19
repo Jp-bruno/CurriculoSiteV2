@@ -113,7 +113,7 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
   const { language } = useContext(LanguageContext);
 
   return (
-    <StyledCard key={Math.random() * 2000}>
+    <StyledCard>
       <a
         className="project-image"
         title="Clique para ir até o site."
@@ -159,14 +159,12 @@ export default function ProjectCard({ cardData }: ProjectCardProps) {
         <ul className="more-details-techs">
           {cardData.techs.map((tech) => {
             return (
-              <>
-                <li
-                  key={Math.random() * 1000}
-                  className="tech"
-                >
-                  {tech}
-                </li>
-              </>
+              <li
+                key={Math.random() * 1000}
+                className="tech"
+              >
+                {tech}
+              </li>
             );
           })}
         </ul>

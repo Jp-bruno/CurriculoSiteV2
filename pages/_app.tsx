@@ -7,7 +7,7 @@ import LanguageContextProvider from "../context/languageContext";
 import "../styles/globals.css";
 import "../styles/reset.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -22,4 +22,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;
