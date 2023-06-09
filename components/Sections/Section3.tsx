@@ -123,9 +123,9 @@ export default function Section3() {
           <div className="more-about-me">
             <h3>Hello, my name is João 😁</h3>
 
-            <p>I&#39;m a Front-end developer. I was born and raised in Rio de Janeiro.</p>
+            <p>I&#39;m a Full Stack Web Developer. I was born and raised in Rio de Janeiro.</p>
 
-            <p>Here are some jobs I had before becoming a Front-end:</p>
+            <p>Here are some jobs I had before becoming a developer:</p>
 
             <ul>
               <li>DJ/Audio Technician</li>
@@ -172,9 +172,9 @@ export default function Section3() {
         <div className="more-about-me">
           <h3>Ola, me chamo João 😁</h3>
 
-          <p>Sou desenvolvedor Front-end nascido e criado no Rio de Janeiro.</p>
+          <p>Sou desenvolvedor web Full Stack nascido e criado no Rio de Janeiro.</p>
 
-          <p>Alguns trabalhos que tive antes de ser front-end:</p>
+          <p>Alguns trabalhos que tive antes de ser desenvolvedor:</p>
 
           <ul>
             <li>DJ/Técnico de som</li>
